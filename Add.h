@@ -19,23 +19,23 @@ int AddStudent(struct Student addStudent){
 
 
 
-// int updateStatusStudent(struct Student updateStudent){
-//     struct Student buffStudent;
-//     const char* fileName="Student.txt";
-//     int fd=open(fileName,O_WRONLY,0666);
-//     if(fd==-1){
-//         printf("Error changing status Student\n");
-//         return -1;
-//     }
-//     while(read(fd,&buffStudent,sizeof(buffStudent))>0){
-//         if(strcmp(buffStudent.rollno,updateStudent.rollno)==0){
-//             lseek(fd,-1*sizeof(buffStudent),SEEK_CUR);
-//             write(fd,&updateStudent,sizeof(updateStudent));
-//             return 1;
-//         }
-//     }
-//     return 0;
-// }
+int updateStatusStudent(struct Student updateStudent){
+    struct Student buffStudent;
+    const char* fileName="Student.txt";
+    int fd=open(fileName,O_WRONLY,0666);
+    if(fd==-1){
+        printf("Error changing status Student\n");
+        return -1;
+    }
+    while(read(fd,&buffStudent,sizeof(buffStudent))>0){
+        if(strcmp(buffStudent.rollno,updateStudent.rollno)==0){
+            lseek(fd,-1*sizeof(buffStudent),SEEK_CUR);
+            write(fd,&updateStudent,sizeof(updateStudent));
+            return 1;
+        }
+    }
+    return 0;
+}
 
 
 
