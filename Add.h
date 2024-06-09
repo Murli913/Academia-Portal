@@ -178,30 +178,30 @@ int unenrollInActiveCourse(const char* unenrollInCourse,
 }
 
 
-// int viewEnrolledCourses(const char* inputStudentUID, char* buffs){
-//     //printf("view enrolled called\n");
-//     struct Student displayEnrolled;
-//     const char* inputFile="StudentsInCourses.txt";
-//     int fd=open(inputFile,O_RDONLY,0666);
-//     if(fd==-1){
-//         printf("Unable to access database\n");
-//         return -1;
-//     }
-//     while(read(fd,&displayEnrolled,sizeof(displayEnrolled))>0){
-//         if(strcmp(inputStudentUID,displayEnrolled.rollno)==0 &&
-//             displayEnrolled.courseEnrolled.studentIsEnrolled==1 &&
-//             displayEnrolled.courseEnrolled.status==1){
-//                 strcat(buffs,"\n");
-//                 strcat(buffs,"CourseCode:   ");
-//                 strcat(buffs, displayEnrolled.courseEnrolled.course_code);
-//                 strcat(buffs,"\n");
-//                 strcat(buffs, "Course Name:   ");
-//                 strcat(buffs, displayEnrolled.courseEnrolled.course_name);
-//                 strcat(buffs,"\n");
-//                 //printf("Course Code:   %s\n",displayEnrolled.courseEnrolled.course_code);
-//                 //printf("Course Name:   %s\n",displayEnrolled.courseEnrolled.course_name);
-//             }
-//     }
-//     return 1;
-// }
+int viewEnrolledCourses(const char* inputStudentUID, char* buffs){
+    //printf("view enrolled called\n");
+    struct Student displayEnrolled;
+    const char* inputFile="StudentsInCourses.txt";
+    int fd=open(inputFile,O_RDONLY,0666);
+    if(fd==-1){
+        printf("Unable to access database\n");
+        return -1;
+    }
+    while(read(fd,&displayEnrolled,sizeof(displayEnrolled))>0){
+        if(strcmp(inputStudentUID,displayEnrolled.rollno)==0 &&
+            displayEnrolled.courseEnrolled.studentIsEnrolled==1 &&
+            displayEnrolled.courseEnrolled.status==1){
+                strcat(buffs,"\n");
+                strcat(buffs,"CourseCode:   ");
+                strcat(buffs, displayEnrolled.courseEnrolled.course_code);
+                strcat(buffs,"\n");
+                strcat(buffs, "Course Name:   ");
+                strcat(buffs, displayEnrolled.courseEnrolled.course_name);
+                strcat(buffs,"\n");
+                //printf("Course Code:   %s\n",displayEnrolled.courseEnrolled.course_code);
+                //printf("Course Name:   %s\n",displayEnrolled.courseEnrolled.course_name);
+            }
+    }
+    return 1;
+}
 
