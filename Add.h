@@ -98,47 +98,47 @@ int removeCourse(const char* removeCourse){
 }
 
 
-// int enrollInActiveCourse(const char* enrollInCourse,
-//                         const char* inpuStudentUID){
-//     struct Course chkCourse;
-//     struct Student chkStudent;
-//     const char* courseFile="Courses.txt";
-//     const char* studInCourse="StudentsInCourses.txt";
-//     const char* studentFile="Student.txt";
-//     int fd1=open(courseFile,O_RDWR,0666);
-//     int fd2=open(studInCourse,O_RDWR|O_CREAT|O_APPEND,0666);
-//     int fd3=open(studentFile,O_RDONLY,0666);
-//     if(fd1==-1||fd2==-1||fd3==-1){
-//         printf("Error accessing  Databases\n");
-//         return -1;
-//     }
-//     while(read(fd1,&chkCourse,sizeof(chkCourse))>0){
-//         if(strcmp(chkCourse.course_code,enrollInCourse)==0){
-//             if(chkCourse.currentStudentsEnrolled<=chkCourse.maxStudentsAllowed){
-//                 chkCourse.currentStudentsEnrolled++;
-//                 lseek(fd1,-1*sizeof(chkCourse),SEEK_CUR);
-//                 write(fd1,&chkCourse,sizeof(chkCourse));
-//                 while(read(fd3,&chkStudent,sizeof(chkStudent))>0){
-//                     if(strcmp(chkStudent.rollno,inpuStudentUID)==0){
-//                         strcpy(chkStudent.courseEnrolled.course_code,chkCourse.course_code);
-//                         strcpy(chkStudent.courseEnrolled.course_name,chkCourse.course_name);
-//                         strcpy(chkStudent.courseEnrolled.facultyUID,chkCourse.facultyUID);
-//                         chkStudent.courseEnrolled.credits=chkCourse.credits;
-//                         chkStudent.courseEnrolled.currentStudentsEnrolled=chkCourse.currentStudentsEnrolled;
-//                         chkStudent.courseEnrolled.maxStudentsAllowed=chkCourse.maxStudentsAllowed;
-//                         chkStudent.courseEnrolled.studentIsEnrolled=1;
-//                         chkStudent.courseEnrolled.status=chkCourse.status;
-//                         write(fd2,&chkStudent,sizeof(chkStudent));
-//                         printf("course has been added successfully\n");
-//                         return 1;
-//                     }
-//                 }
-//             }
-//         }
-//     }    
+int enrollInActiveCourse(const char* enrollInCourse,
+                        const char* inpuStudentUID){
+    struct Course chkCourse;
+    struct Student chkStudent;
+    const char* courseFile="Courses.txt";
+    const char* studInCourse="StudentsInCourses.txt";
+    const char* studentFile="Student.txt";
+    int fd1=open(courseFile,O_RDWR,0666);
+    int fd2=open(studInCourse,O_RDWR|O_CREAT|O_APPEND,0666);
+    int fd3=open(studentFile,O_RDONLY,0666);
+    if(fd1==-1||fd2==-1||fd3==-1){
+        printf("Error accessing  Databases\n");
+        return -1;
+    }
+    while(read(fd1,&chkCourse,sizeof(chkCourse))>0){
+        if(strcmp(chkCourse.course_code,enrollInCourse)==0){
+            if(chkCourse.currentStudentsEnrolled<=chkCourse.maxStudentsAllowed){
+                chkCourse.currentStudentsEnrolled++;
+                lseek(fd1,-1*sizeof(chkCourse),SEEK_CUR);
+                write(fd1,&chkCourse,sizeof(chkCourse));
+                while(read(fd3,&chkStudent,sizeof(chkStudent))>0){
+                    if(strcmp(chkStudent.rollno,inpuStudentUID)==0){
+                        strcpy(chkStudent.courseEnrolled.course_code,chkCourse.course_code);
+                        strcpy(chkStudent.courseEnrolled.course_name,chkCourse.course_name);
+                        strcpy(chkStudent.courseEnrolled.facultyUID,chkCourse.facultyUID);
+                        chkStudent.courseEnrolled.credits=chkCourse.credits;
+                        chkStudent.courseEnrolled.currentStudentsEnrolled=chkCourse.currentStudentsEnrolled;
+                        chkStudent.courseEnrolled.maxStudentsAllowed=chkCourse.maxStudentsAllowed;
+                        chkStudent.courseEnrolled.studentIsEnrolled=1;
+                        chkStudent.courseEnrolled.status=chkCourse.status;
+                        write(fd2,&chkStudent,sizeof(chkStudent));
+                        printf("course has been added successfully\n");
+                        return 1;
+                    }
+                }
+            }
+        }
+    }    
             
-//     return 0;
-// }
+    return 0;
+}
 
 
 // int unenrollInActiveCourse(const char* unenrollInCourse,
