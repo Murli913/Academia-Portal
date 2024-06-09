@@ -39,17 +39,17 @@ int updateStatusStudent(struct Student updateStudent){
 
 
 
-// int AddFaculty(struct Faculty addFaculty){
-//     const char* fileName="Faculty.txt";
-//     int fd=open(fileName,O_WRONLY|O_APPEND,0666);
-//     if(fd==-1){
-//         printf("Error Adding Faculty\n");
-//         return -1;
-//     }
-//     write(fd,&addFaculty,sizeof(addFaculty));
+int AddFaculty(struct Faculty addFaculty){
+    const char* fileName="Faculty.txt";
+    int fd=open(fileName,O_WRONLY|O_APPEND,0666);
+    if(fd==-1){
+        printf("Error Adding Faculty\n");
+        return -1;
+    }
+    write(fd,&addFaculty,sizeof(addFaculty));
     
-//     return 0;
-// }
+    return 0;
+}
 
 
 
