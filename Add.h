@@ -141,41 +141,41 @@ int enrollInActiveCourse(const char* enrollInCourse,
 }
 
 
-// int unenrollInActiveCourse(const char* unenrollInCourse,
-//                         const char* inpuStudentUID){
-//     struct Course chkCourse;
-//     struct Student chkStudent;
-//     const char* studInCourse="StudentsInCourses.txt";
-//     const char* coursesFile="Courses.txt";
-//     int fd1=open(studInCourse,O_RDWR,0666);
-//     int fd2=open(coursesFile,O_RDWR,0666);
-//     if(fd1==-1||fd2==-1){
-//         printf("error accessing databases\n");
-//     }
-//     while(read(fd1,&chkStudent,sizeof(chkStudent))>0){
-//         if(strcmp(chkStudent.rollno,inpuStudentUID)==0 &&
-//             strcmp(chkStudent.courseEnrolled.course_code,unenrollInCourse)==0 &&
-//             chkStudent.courseEnrolled.studentIsEnrolled==1){
-//                 chkStudent.courseEnrolled.studentIsEnrolled=0;
-//                 chkStudent.courseEnrolled.currentStudentsEnrolled--;
-//                 lseek(fd1,-1*sizeof(chkStudent),SEEK_CUR);
-//                 write(fd1,&chkStudent,sizeof(chkStudent));
-//                 printf("student has been unenrolled\n");
-//                 while(read(fd2,&chkCourse,sizeof(chkCourse))){
-//                     if(strcmp(chkCourse.course_code,unenrollInCourse)==0){
-//                         if(chkCourse.currentStudentsEnrolled>0){
-//                             chkCourse.currentStudentsEnrolled--;
-//                             lseek(fd2,-1*sizeof(chkCourse),SEEK_CUR);
-//                             write(fd2,&chkCourse,sizeof(chkCourse));
-//                             printf("course count decremented\n");
-//                             return 1;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     return 0;
-// }
+int unenrollInActiveCourse(const char* unenrollInCourse,
+                        const char* inpuStudentUID){
+    struct Course chkCourse;
+    struct Student chkStudent;
+    const char* studInCourse="StudentsInCourses.txt";
+    const char* coursesFile="Courses.txt";
+    int fd1=open(studInCourse,O_RDWR,0666);
+    int fd2=open(coursesFile,O_RDWR,0666);
+    if(fd1==-1||fd2==-1){
+        printf("error accessing databases\n");
+    }
+    while(read(fd1,&chkStudent,sizeof(chkStudent))>0){
+        if(strcmp(chkStudent.rollno,inpuStudentUID)==0 &&
+            strcmp(chkStudent.courseEnrolled.course_code,unenrollInCourse)==0 &&
+            chkStudent.courseEnrolled.studentIsEnrolled==1){
+                chkStudent.courseEnrolled.studentIsEnrolled=0;
+                chkStudent.courseEnrolled.currentStudentsEnrolled--;
+                lseek(fd1,-1*sizeof(chkStudent),SEEK_CUR);
+                write(fd1,&chkStudent,sizeof(chkStudent));
+                printf("student has been unenrolled\n");
+                while(read(fd2,&chkCourse,sizeof(chkCourse))){
+                    if(strcmp(chkCourse.course_code,unenrollInCourse)==0){
+                        if(chkCourse.currentStudentsEnrolled>0){
+                            chkCourse.currentStudentsEnrolled--;
+                            lseek(fd2,-1*sizeof(chkCourse),SEEK_CUR);
+                            write(fd2,&chkCourse,sizeof(chkCourse));
+                            printf("course count decremented\n");
+                            return 1;
+                        }
+                    }
+                }
+            }
+        }
+    return 0;
+}
 
 
 // int viewEnrolledCourses(const char* inputStudentUID, char* buffs){
