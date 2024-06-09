@@ -68,34 +68,34 @@ int AddCourse(struct Course addCourse){
 
 
 
-// int removeCourse(const char* removeCourse){
-//     struct Course buffCourse;
-//     struct Student buffStudent;
-//     const char* fileName="Courses.txt";
-//     const char* fileStudentEnroll="StudentsInCourses.txt";
-//     int fd1=open(fileName,O_RDWR,0666);
-//     int fd2=open(fileStudentEnroll,O_RDWR,0666);
-//     if(fd1==-1||fd2==-1){
-//         printf("Error removing Course\n");
-//         return -1;
-//     }
-//     while(read(fd2,&buffStudent,sizeof(buffStudent))>0){
-//         if(strcmp(removeCourse,buffStudent.courseEnrolled.course_code)==0){
-//             buffStudent.courseEnrolled.status=0;
-//             lseek(fd2,-1*sizeof(buffStudent),SEEK_SET);
-//             write(fd2,&buffStudent,sizeof(buffStudent));
-//         }
-//     }
-//     while(read(fd1,&buffCourse,sizeof(buffCourse))>0){
-//         if(strcmp(buffCourse.course_code,removeCourse)==0){
-//             buffCourse.status=0;
-//             lseek(fd1,-1*sizeof(buffCourse),SEEK_CUR);
-//             write(fd1,&removeCourse,sizeof(removeCourse));
-//             return 1;
-//         }
-//     }
-//     return 0;
-// }
+int removeCourse(const char* removeCourse){
+    struct Course buffCourse;
+    struct Student buffStudent;
+    const char* fileName="Courses.txt";
+    const char* fileStudentEnroll="StudentsInCourses.txt";
+    int fd1=open(fileName,O_RDWR,0666);
+    int fd2=open(fileStudentEnroll,O_RDWR,0666);
+    if(fd1==-1||fd2==-1){
+        printf("Error removing Course\n");
+        return -1;
+    }
+    while(read(fd2,&buffStudent,sizeof(buffStudent))>0){
+        if(strcmp(removeCourse,buffStudent.courseEnrolled.course_code)==0){
+            buffStudent.courseEnrolled.status=0;
+            lseek(fd2,-1*sizeof(buffStudent),SEEK_SET);
+            write(fd2,&buffStudent,sizeof(buffStudent));
+        }
+    }
+    while(read(fd1,&buffCourse,sizeof(buffCourse))>0){
+        if(strcmp(buffCourse.course_code,removeCourse)==0){
+            buffCourse.status=0;
+            lseek(fd1,-1*sizeof(buffCourse),SEEK_CUR);
+            write(fd1,&removeCourse,sizeof(removeCourse));
+            return 1;
+        }
+    }
+    return 0;
+}
 
 
 // int enrollInActiveCourse(const char* enrollInCourse,
