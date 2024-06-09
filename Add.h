@@ -54,17 +54,17 @@ int AddFaculty(struct Faculty addFaculty){
 
 
 
-// int AddCourse(struct Course addCourse){
-//     const char* fileName="Courses.txt";
-//     int fd=open(fileName,O_WRONLY|O_APPEND,0666);
-//     if(fd==-1){
-//         printf("Error Adding Course\n");
-//         return -1;
-//     }
-//     write(fd,&addCourse,sizeof(addCourse));
+int AddCourse(struct Course addCourse){
+    const char* fileName="Courses.txt";
+    int fd=open(fileName,O_WRONLY|O_APPEND,0666);
+    if(fd==-1){
+        printf("Error Adding Course\n");
+        return -1;
+    }
+    write(fd,&addCourse,sizeof(addCourse));
     
-//     return 0;
-// }
+    return 0;
+}
 
 
 
