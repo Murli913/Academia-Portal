@@ -25,44 +25,44 @@ int AuthenticateAdmin(const char* inputEmail,
 }
 
 
-// int AuthenticateFaculty(const char* inputFacUID,
-//                       const char* inputPassword){
-//     const char* fileName="Faculty.txt";
-//     int fd=open(fileName,O_RDONLY,0666);
-//     if(fd==-1){
-//         printf("Unable to authenticate faculty\n");
-//         return -1;
-//     }
-//     struct Faculty facultychk;
-//     while(read(fd,&facultychk,sizeof(facultychk))>0){
-//         if(strcmp(facultychk.facultyUID,inputFacUID)==0 &&
-//            strcmp(facultychk.password,inputPassword)==0){
-//             return 1;
-//            }
-//     }
-//     return 0;
-// }
+int AuthenticateFaculty(const char* inputFacUID,
+                      const char* inputPassword){
+    const char* fileName="Faculty.txt";
+    int fd=open(fileName,O_RDONLY,0666);
+    if(fd==-1){
+        printf("Unable to authenticate faculty\n");
+        return -1;
+    }
+    struct Faculty facultychk;
+    while(read(fd,&facultychk,sizeof(facultychk))>0){
+        if(strcmp(facultychk.facultyUID,inputFacUID)==0 &&
+           strcmp(facultychk.password,inputPassword)==0){
+            return 1;
+           }
+    }
+    return 0;
+}
 
 
 
 
-// int AuthenticateStudent(const char* inputStudentUID,
-//                       const char* inputPassword){
-//     const char* fileName="Student.txt";
-//     int fd=open(fileName,O_RDONLY,0666);
-//     if(fd==-1){
-//         printf("Unable to authenticate student\n");
-//         return -1;
-//     }
-//     struct Student studentchk;
-//     while(read(fd,&studentchk,sizeof(studentchk))>0){
-//         if(strcmp(studentchk.rollno,inputStudentUID)==0 &&
-//            strcmp(studentchk.password,inputPassword)==0 &&
-//            studentchk.status==1){
-//             return 1;
-//            }
-//     }
-//     return 0;
-// }
+int AuthenticateStudent(const char* inputStudentUID,
+                      const char* inputPassword){
+    const char* fileName="Student.txt";
+    int fd=open(fileName,O_RDONLY,0666);
+    if(fd==-1){
+        printf("Unable to authenticate student\n");
+        return -1;
+    }
+    struct Student studentchk;
+    while(read(fd,&studentchk,sizeof(studentchk))>0){
+        if(strcmp(studentchk.rollno,inputStudentUID)==0 &&
+           strcmp(studentchk.password,inputPassword)==0 &&
+           studentchk.status==1){
+            return 1;
+           }
+    }
+    return 0;
+}
 
 #endif
