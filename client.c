@@ -44,48 +44,48 @@ int main(int argc, char* argv[]){
         printf("connection failed\n");
         return -1;
     }
-    // while(1){
-    //     //read
-    //     bzero(buffer,buffsz);
-    //     read(sockfd,buffer,buffsz);
-    //     printf("Server:\n %s\n",buffer);
-    //     //read
+    while(1){
+        //read
+        bzero(buffer,buffsz);
+        read(sockfd,buffer,buffsz);
+        printf("Server:\n %s\n",buffer);
+        //read
 
 
-    //     //write choice
-    //     printf("Input Choice\n");
-    //     int choice;
-    //     scanf("%d",&choice);
-    //     write(sockfd,&choice,sizeof(int));
-    //     //write choice
+        //write choice
+        printf("Input Choice\n");
+        int choice;
+        scanf("%d",&choice);
+        write(sockfd,&choice,sizeof(int));
+        //write choice
         
-    //         if(choice==1){
-    //         //authentication input
+            if(choice==1){
+            //authentication input
 
-    //         //read input email msg
-    //         bzero(buffer,buffsz);
-    //         read(sockfd,buffer,buffsz);
-    //         printf("Server:\n %s\n",buffer);
-    //         //read input email msg
+            //read input email msg
+            bzero(buffer,buffsz);
+            read(sockfd,buffer,buffsz);
+            printf("Server:\n %s\n",buffer);
+            //read input email msg
 
-    //         //write inputEmail
-    //         char inputEmail[100];
-    //         scanf("%s",inputEmail);
-    //         write(sockfd,&inputEmail,sizeof(inputEmail));
-    //         //write inputEmail 
+            //write inputEmail
+            char inputEmail[100];
+            scanf("%s",inputEmail);
+            write(sockfd,&inputEmail,sizeof(inputEmail));
+            //write inputEmail 
 
-    //         //read input Password msg
-    //         bzero(buffer,buffsz);
-    //         read(sockfd,buffer,buffsz);
-    //         printf("Server:\n %s\n",buffer);
-    //         //read input Password msg
+            //read input Password msg
+            bzero(buffer,buffsz);
+            read(sockfd,buffer,buffsz);
+            printf("Server:\n %s\n",buffer);
+            //read input Password msg
 
-    //         //write inputPassword
-    //         char inputPassword[100];
-    //         scanf("%s",inputPassword);
-    //         write(sockfd,&inputPassword,sizeof(inputPassword));
-    //         //write inputPassword 
-    //         //authentication input
+            //write inputPassword
+            char inputPassword[100];
+            scanf("%s",inputPassword);
+            write(sockfd,&inputPassword,sizeof(inputPassword));
+            //write inputPassword 
+            //authentication input
             
     //         //authenticate Check
     //         int isValid;
