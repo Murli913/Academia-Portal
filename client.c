@@ -519,272 +519,272 @@ int main(int argc, char* argv[]){
                         break;
                     }
                 }
-    //             else if(adminChoice==7){
-    //                 //read enter student rollo
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s",buffer);
-    //                 //read enterstudent rollo
+                else if(adminChoice==7){
+                    //read enter student rollo
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s",buffer);
+                    //read enterstudent rollo
 
-    //                 //write rollno
-    //                 char inputRollNo[100];
-    //                 scanf("%s",inputRollNo);
-    //                 write(sockfd,&inputRollNo,sizeof(inputRollNo));
-    //                 //write rollno
+                    //write rollno
+                    char inputRollNo[100];
+                    scanf("%s",inputRollNo);
+                    write(sockfd,&inputRollNo,sizeof(inputRollNo));
+                    //write rollno
 
-    //                 //read checker
-    //                 int checker;
-    //                 read(sockfd,&checker,sizeof(checker));
-    //                 //read checker
+                    //read checker
+                    int checker;
+                    read(sockfd,&checker,sizeof(checker));
+                    //read checker
 
-    //                 if(checker==-1){
-    //                     //database error
-    //                     printf("Unable to access Database\n");
-    //                     break;
-    //                 }else if(checker==0){
-    //                     bzero(buffer,buffsz);
-    //                     read(sockfd,buffer,buffsz);
-    //                     printf("%s\n",buffer);
-    //                     break;
-    //                 }else if(checker==1){
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
-    //             }else if(adminChoice==8){
-    //                 //read enter faculty rollo
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s",buffer);
-    //                 //read enterstudent rollo
+                    if(checker==-1){
+                        //database error
+                        printf("Unable to access Database\n");
+                        break;
+                    }else if(checker==0){
+                        bzero(buffer,buffsz);
+                        read(sockfd,buffer,buffsz);
+                        printf("%s\n",buffer);
+                        break;
+                    }else if(checker==1){
+                        break;
+                    }else{
+                        break;
+                    }
+                }else if(adminChoice==8){
+                    //read enter faculty rollo
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s",buffer);
+                    //read enterstudent rollo
 
-    //                 //write rollno
-    //                 char inputFACUID[100];
-    //                 scanf("%s",inputFACUID);
-    //                 write(sockfd,&inputFACUID,sizeof(inputFACUID));
-    //                 //write rollno
+                    //write rollno
+                    char inputFACUID[100];
+                    scanf("%s",inputFACUID);
+                    write(sockfd,&inputFACUID,sizeof(inputFACUID));
+                    //write rollno
 
-    //                 //read checker
-    //                 int checker;
-    //                 read(sockfd,&checker,sizeof(checker));
-    //                 //read checker
+                    //read checker
+                    int checker;
+                    read(sockfd,&checker,sizeof(checker));
+                    //read checker
 
-    //                 if(checker==-1){
-    //                     //database error
-    //                     printf("Unable to access Database\n");
-    //                     break;
-    //                 }else if(checker==0){
-    //                     bzero(buffer,buffsz);
-    //                     read(sockfd,buffer,buffsz);
-    //                     printf("%s\n",buffer);
-    //                 }else if(checker==1){
-    //                     printf("Entry does not exist\n");
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
-    //             }
-    //             else if(adminChoice==9){printf("Exiting...\n");break;}
-    //             else{printf("Wrong Choice,Exiting...\n");break;}
-    //             }
-    //         }else{
-    //             printf("Authentication failed\n");
-    //             break;
-    //         }
-    //         //authenticate Check
-    //     }else if(choice==2){
-    //         //student login
-    //         //read input UID msg
-    //         bzero(buffer,buffsz);
-    //         read(sockfd,buffer,buffsz);
-    //         printf("Server:\n %s\n",buffer);
-    //         //read input UID msg
+                    if(checker==-1){
+                        //database error
+                        printf("Unable to access Database\n");
+                        break;
+                    }else if(checker==0){
+                        bzero(buffer,buffsz);
+                        read(sockfd,buffer,buffsz);
+                        printf("%s\n",buffer);
+                    }else if(checker==1){
+                        printf("Entry does not exist\n");
+                        break;
+                    }else{
+                        break;
+                    }
+                }
+                else if(adminChoice==9){printf("Exiting...\n");break;}
+                else{printf("Wrong Choice,Exiting...\n");break;}
+                }
+            }else{
+                printf("Authentication failed\n");
+                break;
+            }
+            //authenticate Check
+        }else if(choice==2){
+            //student login
+            //read input UID msg
+            bzero(buffer,buffsz);
+            read(sockfd,buffer,buffsz);
+            printf("Server:\n %s\n",buffer);
+            //read input UID msg
 
-    //         //write input roll no
-    //         char inputStudentUID[100];
-    //         scanf("%s",inputStudentUID);
-    //         write(sockfd,&inputStudentUID,sizeof(inputStudentUID));
-    //         //write input roll no 
+            //write input roll no
+            char inputStudentUID[100];
+            scanf("%s",inputStudentUID);
+            write(sockfd,&inputStudentUID,sizeof(inputStudentUID));
+            //write input roll no 
 
-    //         //read input Password msg
-    //         bzero(buffer,buffsz);
-    //         read(sockfd,buffer,buffsz);
-    //         printf("Server:\n %s\n",buffer);
-    //         //read input Password msg
+            //read input Password msg
+            bzero(buffer,buffsz);
+            read(sockfd,buffer,buffsz);
+            printf("Server:\n %s\n",buffer);
+            //read input Password msg
 
-    //         //write inputPassword
-    //         char inputPassword[100];
-    //         scanf("%s",inputPassword);
-    //         write(sockfd,&inputPassword,sizeof(inputPassword));
-    //         //write inputPassword 
+            //write inputPassword
+            char inputPassword[100];
+            scanf("%s",inputPassword);
+            write(sockfd,&inputPassword,sizeof(inputPassword));
+            //write inputPassword 
 
-    //         //authenticate Check
-    //         int isValid;
-    //         read(sockfd,&isValid,sizeof(int));
-    //         //authenticate Check
+            //authenticate Check
+            int isValid;
+            read(sockfd,&isValid,sizeof(int));
+            //authenticate Check
 
-    //         if(isValid==1){
-    //             while(1){
-    //             //read student Menu
-    //             bzero(buffer,buffsz);
-    //             read(sockfd,buffer,buffsz);
-    //             printf("Server:\n %s\n",buffer);
-    //             //read student Menu
+            if(isValid==1){
+                while(1){
+                //read student Menu
+                bzero(buffer,buffsz);
+                read(sockfd,buffer,buffsz);
+                printf("Server:\n %s\n",buffer);
+                //read student Menu
 
-    //             int studentChoice;
-    //             scanf("%d",&studentChoice);
-    //             write(sockfd,&studentChoice,sizeof(int));
-    //             //write FacultyMenu choice
+                int studentChoice;
+                scanf("%d",&studentChoice);
+                write(sockfd,&studentChoice,sizeof(int));
+                //write FacultyMenu choice
 
                 
-    //             if(studentChoice==1){
-    //                 //read course code
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read course code
+                if(studentChoice==1){
+                    //read course code
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read course code
 
 
-    //                 //input couser code
-    //                 char inputCourseCode[100];
-    //                 scanf("%s",inputCourseCode);
-    //                 write(sockfd,&inputCourseCode,sizeof(inputCourseCode));
-    //                 //input couser code
+                    //input couser code
+                    char inputCourseCode[100];
+                    scanf("%s",inputCourseCode);
+                    write(sockfd,&inputCourseCode,sizeof(inputCourseCode));
+                    //input couser code
 
-    //                 //read checker
-    //                 int checker;
-    //                 read(sockfd,&checker,sizeof(int));
-    //                 //read checker
+                    //read checker
+                    int checker;
+                    read(sockfd,&checker,sizeof(int));
+                    //read checker
 
-    //                 if(checker==-1){
-    //                     //unable to access course database
-    //                     printf("Unable to access Courses Database\n");
-    //                     break;
-    //                 }else if(checker==0){   
-    //                     //course exists
-    //                     int enrollStatus;
-    //                     //read enrollStatus
-    //                     read(sockfd,&enrollStatus,sizeof(int));
-    //                     //read enrollStatus
-    //                     if(enrollStatus==-1){
-    //                         printf("Unable to access database\n");
-    //                         break;
-    //                     }else if(enrollStatus==1){
-    //                         //student is enrolled in course successfully
-    //                         printf("Course added successfully\n");
+                    if(checker==-1){
+                        //unable to access course database
+                        printf("Unable to access Courses Database\n");
+                        break;
+                    }else if(checker==0){   
+                        //course exists
+                        int enrollStatus;
+                        //read enrollStatus
+                        read(sockfd,&enrollStatus,sizeof(int));
+                        //read enrollStatus
+                        if(enrollStatus==-1){
+                            printf("Unable to access database\n");
+                            break;
+                        }else if(enrollStatus==1){
+                            //student is enrolled in course successfully
+                            printf("Course added successfully\n");
                             
-    //                     }else if(enrollStatus==0){
-    //                         //one of condition fails
-    //                         printf("Course does not exist\n");
-    //                         break;
-    //                     }else{
-    //                         break;
-    //                     }
-    //                     break;
-    //                 }else if(checker==1){
-    //                     //course does not exist
-    //                     printf("Course does not exist\n");
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
-    //             }else if(studentChoice==2){
-    //                 //unenroll student
+                        }else if(enrollStatus==0){
+                            //one of condition fails
+                            printf("Course does not exist\n");
+                            break;
+                        }else{
+                            break;
+                        }
+                        break;
+                    }else if(checker==1){
+                        //course does not exist
+                        printf("Course does not exist\n");
+                        break;
+                    }else{
+                        break;
+                    }
+                }else if(studentChoice==2){
+                    //unenroll student
 
-    //                 //read enter course code
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read enter course code
+                    //read enter course code
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read enter course code
 
-    //                 //write course code
-    //                 char inputCourseCode[100];
-    //                 scanf("%s",inputCourseCode);
-    //                 write(sockfd,&inputCourseCode,sizeof(inputCourseCode));
-    //                 //write course code
+                    //write course code
+                    char inputCourseCode[100];
+                    scanf("%s",inputCourseCode);
+                    write(sockfd,&inputCourseCode,sizeof(inputCourseCode));
+                    //write course code
 
-    //                 //read checker
-    //                 int checker;
-    //                 read(sockfd,&checker,sizeof(int));
-    //                 //read checker
+                    //read checker
+                    int checker;
+                    read(sockfd,&checker,sizeof(int));
+                    //read checker
 
-    //                 if(checker==-1){
-    //                     printf("Unable to access database\n");
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //course exists
-    //                     int unenrollStatus;
-    //                     //read unenrollStatus
-    //                     read(sockfd,&unenrollStatus,sizeof(int));
-    //                     //read unenrollStatus
-    //                     if(unenrollStatus==-1){
-    //                         printf("error accessing database\n");
-    //                         break;
-    //                     }else if(unenrollStatus==1){
-    //                         //success
-    //                         printf("Student is unenrolled\n");
+                    if(checker==-1){
+                        printf("Unable to access database\n");
+                        break;
+                    }else if(checker==0){
+                        //course exists
+                        int unenrollStatus;
+                        //read unenrollStatus
+                        read(sockfd,&unenrollStatus,sizeof(int));
+                        //read unenrollStatus
+                        if(unenrollStatus==-1){
+                            printf("error accessing database\n");
+                            break;
+                        }else if(unenrollStatus==1){
+                            //success
+                            printf("Student is unenrolled\n");
                             
-    //                     }else if(unenrollStatus==0){
-    //                         //failed
-    //                         printf("Student hasn't enrolled\n");
-    //                         break;
-    //                     }else{
-    //                         break;
-    //                     }
+                        }else if(unenrollStatus==0){
+                            //failed
+                            printf("Student hasn't enrolled\n");
+                            break;
+                        }else{
+                            break;
+                        }
                         
-    //                 }else if(checker==1){
-    //                     //course does not exists
-    //                     printf("Course does not exist\n");
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
-    //             }else if(studentChoice==3){
-    //                 //view enrolled courses
+                    }else if(checker==1){
+                        //course does not exists
+                        printf("Course does not exist\n");
+                        break;
+                    }else{
+                        break;
+                    }
+                }else if(studentChoice==3){
+                    //view enrolled courses
 
-    //                 //read course details
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read course details
+                    //read course details
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read course details
                     
-    //             }else if(studentChoice==4){
-    //                 //read enter new password
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read enter new password
+                }else if(studentChoice==4){
+                    //read enter new password
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read enter new password
 
 
-    //                 //input new password
-    //                 char inputNewPassword[100];
-    //                 scanf("%s",inputNewPassword);
-    //                 write(sockfd,&inputNewPassword,sizeof(inputNewPassword));
-    //                 //input new password
+                    //input new password
+                    char inputNewPassword[100];
+                    scanf("%s",inputNewPassword);
+                    write(sockfd,&inputNewPassword,sizeof(inputNewPassword));
+                    //input new password
 
 
-    //                 //read msg updation
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read msg updation
+                    //read msg updation
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read msg updation
                     
-    //             }else if(studentChoice==5){
-    //                 printf("Exiting...\n");
-    //                 break;
-    //             }else{
-    //                 printf("Wrong choice,Exiting...");
-    //                 break;
-    //             }
-    //             }
-    //         }
-    //     }else if(choice==3){
-    //         //faculty login
-    //         //read input facUID msg
-    //         bzero(buffer,buffsz);
-    //         read(sockfd,buffer,buffsz);
-    //         printf("Server:\n %s\n",buffer);
-    //         //read input email msg
+                }else if(studentChoice==5){
+                    printf("Exiting...\n");
+                    break;
+                }else{
+                    printf("Wrong choice,Exiting...");
+                    break;
+                }
+                }
+            }
+        }else if(choice==3){
+            //faculty login
+            //read input facUID msg
+            bzero(buffer,buffsz);
+            read(sockfd,buffer,buffsz);
+            printf("Server:\n %s\n",buffer);
+            //read input email msg
 
     //         //write inputFacUID
     //         char inputFacUID[100];
