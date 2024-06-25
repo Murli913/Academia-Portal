@@ -147,45 +147,45 @@ int main(int argc, char* argv[]){
                     printf("Server:\n %s\n",buffer);
                     //read student password
 
-    //                 //input student password
-    //                 char inputStudentPassword[100];
-    //                 scanf("%s",inputStudentPassword);
-    //                 write(sockfd,&inputStudentPassword,sizeof(inputStudentPassword));
-    //                 //input student password
+                    //input student password
+                    char inputStudentPassword[100];
+                    scanf("%s",inputStudentPassword);
+                    write(sockfd,&inputStudentPassword,sizeof(inputStudentPassword));
+                    //input student password
 
-    //                 //read checker
-    //                 int checker;
-    //                 read(sockfd,&checker,sizeof(int));
-    //                 //read checker
-    //                 if(checker==-1){
-    //                     break;
-    //                 }else if(checker==0){
-    //                     break;
-    //                 }else if(checker==1){
-    //                     //read addStudentEntry
-    //                     int addStudentEntry;
-    //                     read(sockfd,&addStudentEntry,sizeof(int));
-    //                     //read addStudentEntry
-    //                     if(addStudentEntry==-1){
-    //                         break;
-    //                     }else{
-    //                         //read student added successfully!!!
-    //                         bzero(buffer,buffsz);
-    //                         read(sockfd,buffer,buffsz);
-    //                         printf("Server:\n %s\n",buffer);
+                    //read checker
+                    int checker;
+                    read(sockfd,&checker,sizeof(int));
+                    //read checker
+                    if(checker==-1){
+                        break;
+                    }else if(checker==0){
+                        break;
+                    }else if(checker==1){
+                        //read addStudentEntry
+                        int addStudentEntry;
+                        read(sockfd,&addStudentEntry,sizeof(int));
+                        //read addStudentEntry
+                        if(addStudentEntry==-1){
+                            break;
+                        }else{
+                            //read student added successfully!!!
+                            bzero(buffer,buffsz);
+                            read(sockfd,buffer,buffsz);
+                            printf("Server:\n %s\n",buffer);
                             
-    //                         //read student added successfully!!!
-    //                     }
-    //                 }else{
-    //                     break;
-    //                 }
-    //             }
-    //             else if(adminChoice==2){
-    //                 //read Faculty name
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read Faculty name
+                            //read student added successfully!!!
+                        }
+                    }else{
+                        break;
+                    }
+                }
+                else if(adminChoice==2){
+                    //read Faculty name
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read Faculty name
                     
     //                 //input Faculty name
     //                 char inputFacultyName[100];
