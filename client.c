@@ -84,68 +84,68 @@ int main(int argc, char* argv[]){
             char inputPassword[100];
             scanf("%s",inputPassword);
             write(sockfd,&inputPassword,sizeof(inputPassword));
-            //write inputPassword 
-            //authentication input
+            write inputPassword 
+            authentication input
             
-    //         //authenticate Check
-    //         int isValid;
-    //         read(sockfd,&isValid,sizeof(int));
-    //         if(isValid==1){
-    //             while(1){
-    //             //read adminMenu msg
-    //             bzero(buffer,buffsz);
-    //             read(sockfd,buffer,buffsz);
-    //             printf("Server:\n %s\n",buffer);
-    //             //read adminMenu msg
+            //authenticate Check
+            int isValid;
+            read(sockfd,&isValid,sizeof(int));
+            if(isValid==1){
+                while(1){
+                //read adminMenu msg
+                bzero(buffer,buffsz);
+                read(sockfd,buffer,buffsz);
+                printf("Server:\n %s\n",buffer);
+                //read adminMenu msg
 
-    //             //write adminMenu choice
-    //             int adminChoice;
-    //             scanf("%d",&adminChoice);
-    //             write(sockfd,&adminChoice,sizeof(int));
-    //             //write adminMenu choice
+                //write adminMenu choice
+                int adminChoice;
+                scanf("%d",&adminChoice);
+                write(sockfd,&adminChoice,sizeof(int));
+                //write adminMenu choice
                 
-    //             if(adminChoice==1){
-    //                 //read student name
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read student name
+                if(adminChoice==1){
+                    //read student name
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read student name
                     
-    //                 //input student name
-    //                 char inputStudentName[100];
-    //                 scanf("%s",inputStudentName);
-    //                 write(sockfd,&inputStudentName,sizeof(inputStudentName));
-    //                 //input student name
+                    //input student name
+                    char inputStudentName[100];
+                    scanf("%s",inputStudentName);
+                    write(sockfd,&inputStudentName,sizeof(inputStudentName));
+                    //input student name
 
-    //                 //read student rollno
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read student rollno
+                    //read student rollno
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read student rollno
 
-    //                 //input student rollno
-    //                 char inputStudentRollno[100];
-    //                 scanf("%s",inputStudentRollno);
-    //                 write(sockfd,&inputStudentRollno,sizeof(inputStudentRollno));
-    //                 //input student rollno
+                    //input student rollno
+                    char inputStudentRollno[100];
+                    scanf("%s",inputStudentRollno);
+                    write(sockfd,&inputStudentRollno,sizeof(inputStudentRollno));
+                    //input student rollno
 
-    //                 //read student emailID
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read student emailID
+                    //read student emailID
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read student emailID
 
-    //                 //input student emailID
-    //                 char inputStudentEmailID[100];
-    //                 scanf("%s",inputStudentEmailID);
-    //                 write(sockfd,&inputStudentEmailID,sizeof(inputStudentEmailID));
-    //                 //input student emailID
+                    //input student emailID
+                    char inputStudentEmailID[100];
+                    scanf("%s",inputStudentEmailID);
+                    write(sockfd,&inputStudentEmailID,sizeof(inputStudentEmailID));
+                    //input student emailID
 
-    //                 //read student password
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read student password
+                    //read student password
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read student password
 
     //                 //input student password
     //                 char inputStudentPassword[100];
