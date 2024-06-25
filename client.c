@@ -288,49 +288,49 @@ int main(int argc, char* argv[]){
                         break;
                     }
                 }
-    //             else if(adminChoice==4){
-    //                 //read Student UID
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read Student UID
+                else if(adminChoice==4){
+                    //read Student UID
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read Student UID
                     
-    //                 //input Student UID
-    //                 char inputStudentRollno[100];
-    //                 scanf("%s",inputStudentRollno);
-    //                 write(sockfd,&inputStudentRollno,sizeof(inputStudentRollno));
-    //                 //input Student UID
+                    //input Student UID
+                    char inputStudentRollno[100];
+                    scanf("%s",inputStudentRollno);
+                    write(sockfd,&inputStudentRollno,sizeof(inputStudentRollno));
+                    //input Student UID
 
-    //                 //read checker
-    //                 int checker;
-    //                 read(sockfd,&checker,sizeof(int));
-    //                 //read checker                   
+                    //read checker
+                    int checker;
+                    read(sockfd,&checker,sizeof(int));
+                    //read checker                   
 
-    //                 if(checker==-1){
-    //                     //unable to access database
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //duplicate entry
+                    if(checker==-1){
+                        //unable to access database
+                        break;
+                    }else if(checker==0){
+                        //duplicate entry
 
-    //                     //read student msg
-    //                     bzero(buffer,buffsz);
-    //                     read(sockfd,buffer,buffsz);
-    //                     printf("Server:\n %s\n",buffer);
-    //                     //read student msg
+                        //read student msg
+                        bzero(buffer,buffsz);
+                        read(sockfd,buffer,buffsz);
+                        printf("Server:\n %s\n",buffer);
+                        //read student msg
 
-    //                 }else if(checker==1){
-    //                     //unique entry
+                    }else if(checker==1){
+                        //unique entry
 
-    //                     //read student not found
-    //                     bzero(buffer,buffsz);
-    //                     read(sockfd,buffer,buffsz);
-    //                     printf("Server:\n %s\n",buffer);
-    //                     //read student not found
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
-    //             }
+                        //read student not found
+                        bzero(buffer,buffsz);
+                        read(sockfd,buffer,buffsz);
+                        printf("Server:\n %s\n",buffer);
+                        //read student not found
+                        break;
+                    }else{
+                        break;
+                    }
+                }
     //             else if(adminChoice==5){
     //                 //update student
 
