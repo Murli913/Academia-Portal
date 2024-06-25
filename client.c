@@ -904,90 +904,90 @@ int main(int argc, char* argv[]){
                     }
                     else{break;}
 
-    //             }
-    //             else if(facultyChoice==2){
-    //                 //remove course code
+                }
+                else if(facultyChoice==2){
+                    //remove course code
 
-    //                 //read enter course code
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read enter course code
+                    //read enter course code
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read enter course code
 
-    //                 //write course code
-    //                 char inputCourseCode[100];
-    //                 scanf("%s",inputCourseCode);
-    //                 write(sockfd,&inputCourseCode,sizeof(inputCourseCode));
-    //                 //write course code
+                    //write course code
+                    char inputCourseCode[100];
+                    scanf("%s",inputCourseCode);
+                    write(sockfd,&inputCourseCode,sizeof(inputCourseCode));
+                    //write course code
 
-    //                 //read checker
-    //                 int checker;
-    //                 read(sockfd,&checker,sizeof(int));
-    //                 //read checker 
-    //                 if(checker==-1){
-    //                     printf("Unable to access Course Database\n");
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //course is removed
+                    //read checker
+                    int checker;
+                    read(sockfd,&checker,sizeof(int));
+                    //read checker 
+                    if(checker==-1){
+                        printf("Unable to access Course Database\n");
+                        break;
+                    }else if(checker==0){
+                        //course is removed
 
-    //                     //read course remove msg
-    //                     bzero(buffer,buffsz);
-    //                     read(sockfd,buffer,buffsz);
-    //                     printf("Server:\n %s\n",buffer);
-    //                     //read course remove msg
+                        //read course remove msg
+                        bzero(buffer,buffsz);
+                        read(sockfd,buffer,buffsz);
+                        printf("Server:\n %s\n",buffer);
+                        //read course remove msg
                         
-    //                 }else if(checker==1){
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
+                    }else if(checker==1){
+                        break;
+                    }else{
+                        break;
+                    }
 
 
-    //             }
-    //             else if(facultyChoice==3){
-    //                 //view enrollments
+                }
+                else if(facultyChoice==3){
+                    //view enrollments
 
-    //                 //read msg for input
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read msg for input
+                    //read msg for input
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read msg for input
 
-    //                 //write course code
-    //                 char inputCoursecode[100];
-    //                 scanf("%s",inputCoursecode);
-    //                 write(sockfd,&inputCoursecode,sizeof(inputCoursecode));
-    //                 //write course code
+                    //write course code
+                    char inputCoursecode[100];
+                    scanf("%s",inputCoursecode);
+                    write(sockfd,&inputCoursecode,sizeof(inputCoursecode));
+                    //write course code
 
-    //                 //read checker
-    //                 int checker;
-    //                 read(sockfd,&checker,sizeof(int));
-    //                 //read checker
-    //                 if(checker==-1){
-    //                     printf("Unable to access Courses database\n");
-    //                 }else if(checker==0){
-    //                     //display details
+                    //read checker
+                    int checker;
+                    read(sockfd,&checker,sizeof(int));
+                    //read checker
+                    if(checker==-1){
+                        printf("Unable to access Courses database\n");
+                    }else if(checker==0){
+                        //display details
 
 
-    //                     //read msg
-    //                     bzero(buffer,buffsz);
-    //                     read(sockfd,buffer,buffsz);
-    //                     printf("Server:\n %s\n",buffer);
-    //                     //read msg
+                        //read msg
+                        bzero(buffer,buffsz);
+                        read(sockfd,buffer,buffsz);
+                        printf("Server:\n %s\n",buffer);
+                        //read msg
 
-    //                     int activeStudents;
-    //                     //read active students
+                        int activeStudents;
+                        //read active students
 
-    //                     read(sockfd,&activeStudents,sizeof(activeStudents));
-    //                     printf("%d\n",activeStudents);
-    //                     //read active students
+                        read(sockfd,&activeStudents,sizeof(activeStudents));
+                        printf("%d\n",activeStudents);
+                        //read active students
                         
-    //                 }else if(checker==1){
-    //                     printf("Course does not exist\n");
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
+                    }else if(checker==1){
+                        printf("Course does not exist\n");
+                        break;
+                    }else{
+                        break;
+                    }
 
     //             }
     //             else if(facultyChoice==4){
