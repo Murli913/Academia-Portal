@@ -331,99 +331,99 @@ int main(int argc, char* argv[]){
                         break;
                     }
                 }
-    //             else if(adminChoice==5){
-    //                 //update student
+                else if(adminChoice==5){
+                    //update student
 
-    //                 //read input rollnumber msg
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read input rollnumber msg
+                    //read input rollnumber msg
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read input rollnumber msg
 
-    //                 //write input rollnumber
-    //                 char inputStudentRollno[100];
-    //                 scanf("%s",inputStudentRollno);
-    //                 write(sockfd,&inputStudentRollno,sizeof(inputStudentRollno));
-    //                 //write input rollnumber
+                    //write input rollnumber
+                    char inputStudentRollno[100];
+                    scanf("%s",inputStudentRollno);
+                    write(sockfd,&inputStudentRollno,sizeof(inputStudentRollno));
+                    //write input rollnumber
 
-    //                 //read checker
-    //                 int checker;
-    //                 read(sockfd,&checker,sizeof(int));
-    //                 //read checker  
+                    //read checker
+                    int checker;
+                    read(sockfd,&checker,sizeof(int));
+                    //read checker  
 
-    //                 if(checker==-1){
-    //                     //unable to access database
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //duplicate entry
+                    if(checker==-1){
+                        //unable to access database
+                        break;
+                    }else if(checker==0){
+                        //duplicate entry
 
-    //                     //read name/pass
-    //                     bzero(buffer,buffsz);
-    //                     read(sockfd,buffer,buffsz);
-    //                     printf("Server:\n %s\n",buffer);
-    //                     //read name/pass
+                        //read name/pass
+                        bzero(buffer,buffsz);
+                        read(sockfd,buffer,buffsz);
+                        printf("Server:\n %s\n",buffer);
+                        //read name/pass
 
-    //                     //write namepass value
-    //                     int namePass;
-    //                     scanf("%d",&namePass);
-    //                     write(sockfd,&namePass,sizeof(int));
-    //                     //write namepass value
-    //                     if(namePass==1){
-    //                         //read enter new name
-    //                         bzero(buffer,buffsz);
-    //                         read(sockfd,buffer,buffsz);
-    //                         printf("Server:\n %s\n",buffer);
-    //                         //read enter new name
+                        //write namepass value
+                        int namePass;
+                        scanf("%d",&namePass);
+                        write(sockfd,&namePass,sizeof(int));
+                        //write namepass value
+                        if(namePass==1){
+                            //read enter new name
+                            bzero(buffer,buffsz);
+                            read(sockfd,buffer,buffsz);
+                            printf("Server:\n %s\n",buffer);
+                            //read enter new name
 
-    //                         //input new name
-    //                         char inputNewName[100];
-    //                         scanf("%s",inputNewName);
-    //                         write(sockfd,&inputNewName,sizeof(inputNewName));
-    //                         //input new name
+                            //input new name
+                            char inputNewName[100];
+                            scanf("%s",inputNewName);
+                            write(sockfd,&inputNewName,sizeof(inputNewName));
+                            //input new name
 
-    //                         //read msg updation
-    //                         bzero(buffer,buffsz);
-    //                         read(sockfd,buffer,buffsz);
-    //                         printf("Server:\n %s\n",buffer);
-    //                         //read msg updation
+                            //read msg updation
+                            bzero(buffer,buffsz);
+                            read(sockfd,buffer,buffsz);
+                            printf("Server:\n %s\n",buffer);
+                            //read msg updation
                             
-    //                     }
-    //                     else if(namePass==2){
-    //                         //read enter new password
-    //                         bzero(buffer,buffsz);
-    //                         read(sockfd,buffer,buffsz);
-    //                         printf("Server:\n %s\n",buffer);
-    //                         //read enter new password
+                        }
+                        else if(namePass==2){
+                            //read enter new password
+                            bzero(buffer,buffsz);
+                            read(sockfd,buffer,buffsz);
+                            printf("Server:\n %s\n",buffer);
+                            //read enter new password
 
-    //                         //input new password
-    //                         char inputNewPassword[100];
-    //                         scanf("%s",inputNewPassword);
-    //                         write(sockfd,&inputNewPassword,sizeof(inputNewPassword));
-    //                         //input new password
+                            //input new password
+                            char inputNewPassword[100];
+                            scanf("%s",inputNewPassword);
+                            write(sockfd,&inputNewPassword,sizeof(inputNewPassword));
+                            //input new password
 
-    //                         //read msg updation
-    //                         bzero(buffer,buffsz);
-    //                         read(sockfd,buffer,buffsz);
-    //                         printf("Server:\n %s\n",buffer);
-    //                         //read msg updation
+                            //read msg updation
+                            bzero(buffer,buffsz);
+                            read(sockfd,buffer,buffsz);
+                            printf("Server:\n %s\n",buffer);
+                            //read msg updation
                             
-    //                     }
-    //                     else{
-    //                         break;
-    //                     }
+                        }
+                        else{
+                            break;
+                        }
 
-    //                 }else if(checker==1){
-    //                     //unique entry
+                    }else if(checker==1){
+                        //unique entry
 
-    //                     //read student not found
-    //                     bzero(buffer,buffsz);
-    //                     read(sockfd,buffer,buffsz);
-    //                     printf("Server:\n %s\n",buffer);
-    //                     //read student not found
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
+                        //read student not found
+                        bzero(buffer,buffsz);
+                        read(sockfd,buffer,buffsz);
+                        printf("Server:\n %s\n",buffer);
+                        //read student not found
+                        break;
+                    }else{
+                        break;
+                    }
 
     //             }
     //             else if(adminChoice==6){
