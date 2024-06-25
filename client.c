@@ -786,123 +786,123 @@ int main(int argc, char* argv[]){
             printf("Server:\n %s\n",buffer);
             //read input email msg
 
-    //         //write inputFacUID
-    //         char inputFacUID[100];
-    //         scanf("%s",inputFacUID);
-    //         write(sockfd,&inputFacUID,sizeof(inputFacUID));
-    //         //write inputFacUID 
+            //write inputFacUID
+            char inputFacUID[100];
+            scanf("%s",inputFacUID);
+            write(sockfd,&inputFacUID,sizeof(inputFacUID));
+            //write inputFacUID 
 
-    //         //read input Password msg
-    //         bzero(buffer,buffsz);
-    //         read(sockfd,buffer,buffsz);
-    //         printf("Server:\n %s\n",buffer);
-    //         //read input Password msg
+            //read input Password msg
+            bzero(buffer,buffsz);
+            read(sockfd,buffer,buffsz);
+            printf("Server:\n %s\n",buffer);
+            //read input Password msg
 
-    //         //write inputPassword
-    //         char inputPassword[100];
-    //         scanf("%s",inputPassword);
-    //         write(sockfd,&inputPassword,sizeof(inputPassword));
-    //         //write inputPassword 
-    //         //authentication input
+            //write inputPassword
+            char inputPassword[100];
+            scanf("%s",inputPassword);
+            write(sockfd,&inputPassword,sizeof(inputPassword));
+            //write inputPassword 
+            //authentication input
             
-    //         //authenticate Check
-    //         int isValid;
-    //         read(sockfd,&isValid,sizeof(int));
-    //         if(isValid==1){
-    //             while(1){
-    //             //read Faculty Menu
-    //             bzero(buffer,buffsz);
-    //             read(sockfd,buffer,buffsz);
-    //             printf("Server:\n %s\n",buffer);
-    //             //read Faculty Menu
+            //authenticate Check
+            int isValid;
+            read(sockfd,&isValid,sizeof(int));
+            if(isValid==1){
+                while(1){
+                //read Faculty Menu
+                bzero(buffer,buffsz);
+                read(sockfd,buffer,buffsz);
+                printf("Server:\n %s\n",buffer);
+                //read Faculty Menu
 
-    //             //write FacultyMenu choice
-    //             int facultyChoice;
-    //             scanf("%d",&facultyChoice);
-    //             write(sockfd,&facultyChoice,sizeof(int));
-    //             //write FacultyMenu choice
+                //write FacultyMenu choice
+                int facultyChoice;
+                scanf("%d",&facultyChoice);
+                write(sockfd,&facultyChoice,sizeof(int));
+                //write FacultyMenu choice
                 
-    //             if(facultyChoice==1){
-    //                 //read course code
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read course code
+                if(facultyChoice==1){
+                    //read course code
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read course code
 
-    //                 //input couser code
-    //                 char inputCourseCode[100];
-    //                 scanf("%s",inputCourseCode);
-    //                 write(sockfd,&inputCourseCode,sizeof(inputCourseCode));
-    //                 //input couser code
+                    //input couser code
+                    char inputCourseCode[100];
+                    scanf("%s",inputCourseCode);
+                    write(sockfd,&inputCourseCode,sizeof(inputCourseCode));
+                    //input couser code
 
-    //                 //read course name
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read course name
+                    //read course name
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read course name
 
-    //                 //input couser name
-    //                 char inputCouseName[100];
-    //                 scanf("%s",inputCouseName);
-    //                 write(sockfd,&inputCouseName,sizeof(inputCouseName));
-    //                 //input couser name
-
-
-    //                 //read course credits
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read course credits
-
-    //                 //input couser credits
-    //                 int inputCredits;
-    //                 scanf("%d",&inputCredits);
-    //                 write(sockfd,&inputCredits,sizeof(int));
-    //                 //input couser credits
+                    //input couser name
+                    char inputCouseName[100];
+                    scanf("%s",inputCouseName);
+                    write(sockfd,&inputCouseName,sizeof(inputCouseName));
+                    //input couser name
 
 
-    //                 //read course maxStudentsAllowed
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read course crmaxStudentsAllowededits
+                    //read course credits
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read course credits
 
-    //                 //input couser maxStudentsAllowed
-    //                 int inputMaxStudentsAllowed;
-    //                 scanf("%d",&inputMaxStudentsAllowed);
-    //                 write(sockfd,&inputMaxStudentsAllowed,sizeof(int));
-    //                 //input couser maxStudentsAllowed
+                    //input couser credits
+                    int inputCredits;
+                    scanf("%d",&inputCredits);
+                    write(sockfd,&inputCredits,sizeof(int));
+                    //input couser credits
 
-    //                 //read checker
-    //                 int checker;
-    //                 read(sockfd,&checker,sizeof(int));
-    //                 //read checker
 
-    //                 if(checker==-1){
-    //                     break;
-    //                 }
-    //                 else if(checker==0){
-    //                     //duplicate entry
-    //                     printf("Entry Already exist\n");
-    //                     break;
-    //                 }
-    //                 else if(checker==1){
-    //                     //course not present
-    //                     int addCourseEntry;
-    //                     read(sockfd,&addCourseEntry,sizeof(int));
-    //                     //read addStudentEntry
-    //                     if(addCourseEntry==-1){
-    //                         break;
-    //                     }else{
-    //                         //read course added successfully!!!
-    //                         bzero(buffer,buffsz);
-    //                         read(sockfd,buffer,buffsz);
-    //                         printf("Server:\n %s\n",buffer);
+                    //read course maxStudentsAllowed
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read course crmaxStudentsAllowededits
+
+                    //input couser maxStudentsAllowed
+                    int inputMaxStudentsAllowed;
+                    scanf("%d",&inputMaxStudentsAllowed);
+                    write(sockfd,&inputMaxStudentsAllowed,sizeof(int));
+                    //input couser maxStudentsAllowed
+
+                    //read checker
+                    int checker;
+                    read(sockfd,&checker,sizeof(int));
+                    //read checker
+
+                    if(checker==-1){
+                        break;
+                    }
+                    else if(checker==0){
+                        //duplicate entry
+                        printf("Entry Already exist\n");
+                        break;
+                    }
+                    else if(checker==1){
+                        //course not present
+                        int addCourseEntry;
+                        read(sockfd,&addCourseEntry,sizeof(int));
+                        //read addStudentEntry
+                        if(addCourseEntry==-1){
+                            break;
+                        }else{
+                            //read course added successfully!!!
+                            bzero(buffer,buffsz);
+                            read(sockfd,buffer,buffsz);
+                            printf("Server:\n %s\n",buffer);
                             
-    //                         //read course added successfully!!!
-    //                     }
-    //                 }
-    //                 else{break;}
+                            //read course added successfully!!!
+                        }
+                    }
+                    else{break;}
 
     //             }
     //             else if(facultyChoice==2){
