@@ -989,54 +989,54 @@ int main(int argc, char* argv[]){
                         break;
                     }
 
-    //             }
-    //             else if(facultyChoice==4){
-    //                 //password change
+                }
+                else if(facultyChoice==4){
+                    //password change
 
 
-    //                 //read enter new password
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read enter new password
+                    //read enter new password
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read enter new password
 
 
-    //                 //input new password
-    //                 char inputNewPassword[100];
-    //                 scanf("%s",inputNewPassword);
-    //                 write(sockfd,&inputNewPassword,sizeof(inputNewPassword));
-    //                 //input new password
+                    //input new password
+                    char inputNewPassword[100];
+                    scanf("%s",inputNewPassword);
+                    write(sockfd,&inputNewPassword,sizeof(inputNewPassword));
+                    //input new password
 
 
-    //                 //read msg updation
-    //                 bzero(buffer,buffsz);
-    //                 read(sockfd,buffer,buffsz);
-    //                 printf("Server:\n %s\n",buffer);
-    //                 //read msg updation
+                    //read msg updation
+                    bzero(buffer,buffsz);
+                    read(sockfd,buffer,buffsz);
+                    printf("Server:\n %s\n",buffer);
+                    //read msg updation
                     
-    //             }
-    //             else if(facultyChoice==5){
-    //                 printf("Exiting...\n");
-    //                 break;
-    //             }else{
-    //                 printf("Wrong Choice, Exiting...\n");
-    //                 break;
-    //             }
-    //             }
-    //         }else{
-    //             printf("Authentication failed\n");
-    //             break;
-    //         }
+                }
+                else if(facultyChoice==5){
+                    printf("Exiting...\n");
+                    break;
+                }else{
+                    printf("Wrong Choice, Exiting...\n");
+                    break;
+                }
+                }
+            }else{
+                printf("Authentication failed\n");
+                break;
+            }
 
-    //     }else{
-    //         printf("exiting...\n");
-    //         break;
-    //     }
+        }else{
+            printf("exiting...\n");
+            break;
+        }
         
 
         
         
-    // }
-    // close(sockfd);
-    // return 0;
+    }
+    close(sockfd);
+    return 0;
 }
