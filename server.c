@@ -197,116 +197,116 @@ int main(int argc, char* argv[]){
                         break;
                     }
 
-    //             }
-    //             else if(adminChoice==2){
-    //                 struct Faculty addFaculty;
+                }
+                else if(adminChoice==2){
+                    struct Faculty addFaculty;
                     
-    //                 //write Faculty name
-    //                 char* msg="Enter faculty name\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write Faculty name
+                    //write Faculty name
+                    char* msg="Enter faculty name\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write Faculty name
 
-    //                 //read Faculty name
-    //                 read(newsockfd,&addFaculty.name,sizeof(addFaculty.name));
-    //                 //read Faculty name
+                    //read Faculty name
+                    read(newsockfd,&addFaculty.name,sizeof(addFaculty.name));
+                    //read Faculty name
                     
-    //                 //write Faculty rollno
-    //                 msg="Enter faculty UID\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write Faculty rollno
+                    //write Faculty rollno
+                    msg="Enter faculty UID\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write Faculty rollno
 
-    //                 //read Faculty uid
-    //                 read(newsockfd,&addFaculty.facultyUID,sizeof(addFaculty.facultyUID));
-    //                 //read Faculty uid
+                    //read Faculty uid
+                    read(newsockfd,&addFaculty.facultyUID,sizeof(addFaculty.facultyUID));
+                    //read Faculty uid
 
 
-    //                 //write Faculty password
-    //                 msg="Enter Faculty password\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write Faculty password
+                    //write Faculty password
+                    msg="Enter Faculty password\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write Faculty password
 
-    //                 //read Faculty password
-    //                 read(newsockfd,&addFaculty.password,sizeof(addFaculty.password));
-    //                 //read Faculty password
-    //                 int checker=searchFaculty(addFaculty.facultyUID);
+                    //read Faculty password
+                    read(newsockfd,&addFaculty.password,sizeof(addFaculty.password));
+                    //read Faculty password
+                    int checker=searchFaculty(addFaculty.facultyUID);
 
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(int));
-    //                 //write checker
+                    //write checker
+                    write(newsockfd,&checker,sizeof(int));
+                    //write checker
 
                     
-    //                 if(checker==-1){
-    //                     //unable to access database
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //duplicate entry
-    //                     break;
+                    if(checker==-1){
+                        //unable to access database
+                        break;
+                    }else if(checker==0){
+                        //duplicate entry
+                        break;
 
-    //                 }else if(checker==1){
-    //                     //unique entry
-    //                     int addFacultyEntry=AddFaculty(addFaculty);
-    //                     //write addFacultyEntry
-    //                     write(newsockfd,&addFacultyEntry,sizeof(int));
-    //                     //write addFacultyEntry
-    //                     if(addFacultyEntry==-1){
-    //                         break;
-    //                     }else{
-    //                         //write Faculty added successfully!!!
-    //                         msg="Faculty added successfully!!!\n";
-    //                         write(newsockfd,msg,strlen(msg));
-    //                         //write Faculty added successfully!!!
-    //                     }
+                    }else if(checker==1){
+                        //unique entry
+                        int addFacultyEntry=AddFaculty(addFaculty);
+                        //write addFacultyEntry
+                        write(newsockfd,&addFacultyEntry,sizeof(int));
+                        //write addFacultyEntry
+                        if(addFacultyEntry==-1){
+                            break;
+                        }else{
+                            //write Faculty added successfully!!!
+                            msg="Faculty added successfully!!!\n";
+                            write(newsockfd,msg,strlen(msg));
+                            //write Faculty added successfully!!!
+                        }
 
-    //                 }else{
-    //                     break;
-    //                 }
+                    }else{
+                        break;
+                    }
 
-    //             }
-    //             else if(adminChoice==3){
-    //                 struct Student activateThisStudent;
-    //                 //write Student UID
-    //                 char* msg="Enter Student rollno\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write Student UID
+                }
+                else if(adminChoice==3){
+                    struct Student activateThisStudent;
+                    //write Student UID
+                    char* msg="Enter Student rollno\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write Student UID
 
-    //                 //read Student UID
-    //                 read(newsockfd,&activateThisStudent.rollno,sizeof(activateThisStudent.rollno));
-    //                 //read Student UID
+                    //read Student UID
+                    read(newsockfd,&activateThisStudent.rollno,sizeof(activateThisStudent.rollno));
+                    //read Student UID
 
-    //                 int checker=searchStudent(activateThisStudent.rollno);
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(int));
-    //                 //write checker
+                    int checker=searchStudent(activateThisStudent.rollno);
+                    //write checker
+                    write(newsockfd,&checker,sizeof(int));
+                    //write checker
 
-    //                 if(checker==-1){
-    //                     //unable to access database
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //duplicate entry
-    //                     activateThisStudent.status=1;
-    //                     //update status in database
-    //                     updateStatusStudent(activateThisStudent);
-    //                     //update status in database
+                    if(checker==-1){
+                        //unable to access database
+                        break;
+                    }else if(checker==0){
+                        //duplicate entry
+                        activateThisStudent.status=1;
+                        //update status in database
+                        updateStatusStudent(activateThisStudent);
+                        //update status in database
                         
-    //                     msg="Student status activated\n";
+                        msg="Student status activated\n";
 
-    //                     //write student msg
-    //                     write(newsockfd,msg,strlen(msg));
-    //                     //write student msg
+                        //write student msg
+                        write(newsockfd,msg,strlen(msg));
+                        //write student msg
 
-    //                 }else if(checker==1){
-    //                     //unique entry
-    //                     msg="No such student exist\n";
+                    }else if(checker==1){
+                        //unique entry
+                        msg="No such student exist\n";
 
-    //                     //write student not found
-    //                     write(newsockfd,msg,strlen(msg));
-    //                     //write student not found
+                        //write student not found
+                        write(newsockfd,msg,strlen(msg));
+                        //write student not found
                         
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
-    //             }
+                        break;
+                    }else{
+                        break;
+                    }
+                }
     //             else if(adminChoice==4){
     //                 struct Student deactivateThisStudent;
     //                 //write Student UID
