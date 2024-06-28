@@ -520,109 +520,109 @@ int main(int argc, char* argv[]){
                             
                             
 
-    //                     }else if(namePass==2){
-    //                         //update password
-    //                         struct Faculty updatePassword;
-    //                         int fd=open("Faculty.txt",O_RDONLY,0666);
-    //                         while(read(fd,&updatePassword,sizeof(updatePassword))>0){
-    //                             if(strcmp(updatePassword.facultyUID,inputUID)==0){
-    //                                 //write msg to enter new password
-    //                                 msg="Enter new password\n";
-    //                                 write(newsockfd,msg,strlen(msg));
-    //                                 //write msg to enter new password
+                        }else if(namePass==2){
+                            //update password
+                            struct Faculty updatePassword;
+                            int fd=open("Faculty.txt",O_RDONLY,0666);
+                            while(read(fd,&updatePassword,sizeof(updatePassword))>0){
+                                if(strcmp(updatePassword.facultyUID,inputUID)==0){
+                                    //write msg to enter new password
+                                    msg="Enter new password\n";
+                                    write(newsockfd,msg,strlen(msg));
+                                    //write msg to enter new password
 
-    //                                 //read new password
-    //                                 read(newsockfd,updatePassword.password,sizeof(updatePassword.password));
-    //                                 //read new password
-    //                                 lseek(fd,-1*sizeof(updatePassword),SEEK_CUR);
-    //                                 write(fd,&updatePassword,sizeof(updatePassword));
+                                    //read new password
+                                    read(newsockfd,updatePassword.password,sizeof(updatePassword.password));
+                                    //read new password
+                                    lseek(fd,-1*sizeof(updatePassword),SEEK_CUR);
+                                    write(fd,&updatePassword,sizeof(updatePassword));
 
-    //                                 //write msg updation successful
-    //                                 msg="Name has been updated\n";
-    //                                 write(newsockfd,msg,strlen(msg));
-    //                                 //write msg updation successful
-    //                                 break;
-    //                             }
-    //                         }
+                                    //write msg updation successful
+                                    msg="Name has been updated\n";
+                                    write(newsockfd,msg,strlen(msg));
+                                    //write msg updation successful
+                                    break;
+                                }
+                            }
                             
-    //                     }else{
-    //                         break;
-    //                     }
+                        }else{
+                            break;
+                        }
 
-    //                 }else if(checker==1){
-    //                     //unique entry
-    //                     msg="No such Faculty exist\n";
+                    }else if(checker==1){
+                        //unique entry
+                        msg="No such Faculty exist\n";
 
-    //                     //write student not found
-    //                     write(newsockfd,msg,strlen(msg));
-    //                     //write student not found
+                        //write student not found
+                        write(newsockfd,msg,strlen(msg));
+                        //write student not found
                         
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
+                        break;
+                    }else{
+                        break;
+                    }
 
-    //             }
-    //             else if(adminChoice==7){
-    //                 //write enterstudent rollo
-    //                 char* msg="Enter Student Roll No\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write enterstudent rollo
+                }
+                else if(adminChoice==7){
+                    //write enterstudent rollo
+                    char* msg="Enter Student Roll No\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write enterstudent rollo
 
 
-    //                 //read roolno
-    //                 char inputRollNo[100];
-    //                 read(newsockfd,&inputRollNo,sizeof(inputRollNo));
-    //                 int checker=searchStudent(inputRollNo);
+                    //read roolno
+                    char inputRollNo[100];
+                    read(newsockfd,&inputRollNo,sizeof(inputRollNo));
+                    int checker=searchStudent(inputRollNo);
 
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(checker));
-    //                 //write checker
-    //                 if(checker==-1){
-    //                     //fail db access
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //exist
-    //                     struct Student getDetails;
-    //                     int fd=open("Student.txt",O_RDONLY,0666);
-    //                     if(fd==-1){
-    //                         printf("unable to access Student database\n");
-    //                         break;
-    //                     }
-    //                     while(read(fd,&getDetails,sizeof(getDetails))>0){
-    //                         if(strcmp(getDetails.rollno,inputRollNo)==0){
-    //                             bzero(buffer,buffsz);
-    //                             strcat(buffer,"Student Roll Number is:  ");
-    //                             strcat(buffer,getDetails.rollno);
-    //                             strcat(buffer,"\n");
-    //                             strcat(buffer,"Student name is:  ");
-    //                             strcat(buffer,getDetails.name);
-    //                             strcat(buffer,"\n");
-    //                             strcat(buffer,"Is Student Active:  ");
-    //                             if(getDetails.status==1){
-    //                                 strcat(buffer,"1");
-    //                             }else{
-    //                                 strcat(buffer,"0");
-    //                             }
-    //                             strcat(buffer,"\n");
-    //                             write(newsockfd,&buffer,sizeof(buffer));
-    //                             break;
-    //                         }
-    //                     }
-    //                 }else if(checker==1){
-    //                     //does not exist
-    //                     break;
-    //                 }else{
-    //                     //other error
-    //                     break;
-    //                 }
-    //                 //read roolno
-    //             }else if(adminChoice==8){
-    //                 //faculty Details
-    //                 //write faculty rollo
-    //                 char* msg="Enter Faculty Unique ID\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write faculty rollo
+                    //write checker
+                    write(newsockfd,&checker,sizeof(checker));
+                    //write checker
+                    if(checker==-1){
+                        //fail db access
+                        break;
+                    }else if(checker==0){
+                        //exist
+                        struct Student getDetails;
+                        int fd=open("Student.txt",O_RDONLY,0666);
+                        if(fd==-1){
+                            printf("unable to access Student database\n");
+                            break;
+                        }
+                        while(read(fd,&getDetails,sizeof(getDetails))>0){
+                            if(strcmp(getDetails.rollno,inputRollNo)==0){
+                                bzero(buffer,buffsz);
+                                strcat(buffer,"Student Roll Number is:  ");
+                                strcat(buffer,getDetails.rollno);
+                                strcat(buffer,"\n");
+                                strcat(buffer,"Student name is:  ");
+                                strcat(buffer,getDetails.name);
+                                strcat(buffer,"\n");
+                                strcat(buffer,"Is Student Active:  ");
+                                if(getDetails.status==1){
+                                    strcat(buffer,"1");
+                                }else{
+                                    strcat(buffer,"0");
+                                }
+                                strcat(buffer,"\n");
+                                write(newsockfd,&buffer,sizeof(buffer));
+                                break;
+                            }
+                        }
+                    }else if(checker==1){
+                        //does not exist
+                        break;
+                    }else{
+                        //other error
+                        break;
+                    }
+                    //read roolno
+                }else if(adminChoice==8){
+                    //faculty Details
+                    //write faculty rollo
+                    char* msg="Enter Faculty Unique ID\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write faculty rollo
 
 
     //                 //read roolno
