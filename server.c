@@ -625,95 +625,95 @@ int main(int argc, char* argv[]){
                     //write faculty rollo
 
 
-    //                 //read roolno
-    //                 char inputFACUID[100];
-    //                 read(newsockfd,&inputFACUID,sizeof(inputFACUID));
-    //                 int checker=searchFaculty(inputFACUID);
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(checker));
-    //                 //write checker
-    //                 if(checker==-1){
-    //                     //fail db access
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //exist
-    //                     struct Faculty getDetails;
-    //                     int fd=open("Faculty.txt",O_RDONLY,0666);
-    //                     if(fd==-1){
-    //                         printf("unable to access Faculty database\n");
-    //                         break;
-    //                     }
-    //                     while(read(fd,&getDetails,sizeof(getDetails))>0){
-    //                         if(strcmp(getDetails.facultyUID,inputFACUID)==0){
-    //                             bzero(buffer,buffsz);
-    //                             strcat(buffer,"Faculty unique ID is:  ");
-    //                             strcat(buffer,getDetails.facultyUID);
-    //                             strcat(buffer,"\n");
-    //                             strcat(buffer,"Faculty name is:  ");
-    //                             strcat(buffer,getDetails.name);
-    //                             strcat(buffer,"\n");
-    //                             write(newsockfd,&buffer,sizeof(buffer));
-    //                             break;
-    //                         }
-    //                     }
-    //                 }else if(checker==1){
-    //                     //does not exist
-    //                     break;
-    //                 }else{
-    //                     //other error
-    //                     break;
-    //                 }
-    //             }
-    //             else if(adminChoice==9){
-    //                 printf("Admin Exiting...\n");
-    //                 break;}
-    //             else{
-    //                 printf("Admin wrong choice\n");
-    //                 break;}
-    //             }
-    //         }
-    //         else{
-    //             break;
-    //         }
-    //         //authentication input
-    //     }else if(choice==2){
-    //         //student login
-    //         //write input UID msg
-    //         char* StudentRollnoMsg="Enter Student rollno:\n";
-    //         write(newsockfd,StudentRollnoMsg,strlen(StudentRollnoMsg));
-    //         //write input email msg
+                    //read roolno
+                    char inputFACUID[100];
+                    read(newsockfd,&inputFACUID,sizeof(inputFACUID));
+                    int checker=searchFaculty(inputFACUID);
+                    //write checker
+                    write(newsockfd,&checker,sizeof(checker));
+                    //write checker
+                    if(checker==-1){
+                        //fail db access
+                        break;
+                    }else if(checker==0){
+                        //exist
+                        struct Faculty getDetails;
+                        int fd=open("Faculty.txt",O_RDONLY,0666);
+                        if(fd==-1){
+                            printf("unable to access Faculty database\n");
+                            break;
+                        }
+                        while(read(fd,&getDetails,sizeof(getDetails))>0){
+                            if(strcmp(getDetails.facultyUID,inputFACUID)==0){
+                                bzero(buffer,buffsz);
+                                strcat(buffer,"Faculty unique ID is:  ");
+                                strcat(buffer,getDetails.facultyUID);
+                                strcat(buffer,"\n");
+                                strcat(buffer,"Faculty name is:  ");
+                                strcat(buffer,getDetails.name);
+                                strcat(buffer,"\n");
+                                write(newsockfd,&buffer,sizeof(buffer));
+                                break;
+                            }
+                        }
+                    }else if(checker==1){
+                        //does not exist
+                        break;
+                    }else{
+                        //other error
+                        break;
+                    }
+                }
+                else if(adminChoice==9){
+                    printf("Admin Exiting...\n");
+                    break;}
+                else{
+                    printf("Admin wrong choice\n");
+                    break;}
+                }
+            }
+            else{
+                break;
+            }
+            //authentication input
+        }else if(choice==2){
+            //student login
+            //write input UID msg
+            char* StudentRollnoMsg="Enter Student rollno:\n";
+            write(newsockfd,StudentRollnoMsg,strlen(StudentRollnoMsg));
+            //write input email msg
 
-    //         //read input rollno
-    //         char inputStudentUID[100];
-    //         read(newsockfd,&inputStudentUID,sizeof(inputStudentUID));
-    //         //read input email
+            //read input rollno
+            char inputStudentUID[100];
+            read(newsockfd,&inputStudentUID,sizeof(inputStudentUID));
+            //read input email
 
-    //         //write input Password msg
-    //         char* PasswordMsg="Enter Password:\n";
-    //         write(newsockfd,PasswordMsg,strlen(PasswordMsg));
-    //         //write input Password msg
+            //write input Password msg
+            char* PasswordMsg="Enter Password:\n";
+            write(newsockfd,PasswordMsg,strlen(PasswordMsg));
+            //write input Password msg
 
-    //         //read input password
-    //         char inputPassword[100];
-    //         read(newsockfd,&inputPassword,sizeof(inputPassword));
-    //         //read input password
+            //read input password
+            char inputPassword[100];
+            read(newsockfd,&inputPassword,sizeof(inputPassword));
+            //read input password
 
-    //         int isValid=AuthenticateStudent(inputStudentUID,inputPassword);
-    //         //write isvalid to client
-    //         write(newsockfd,&isValid,sizeof(isValid));
-    //         //write isvalid to client
+            int isValid=AuthenticateStudent(inputStudentUID,inputPassword);
+            //write isvalid to client
+            write(newsockfd,&isValid,sizeof(isValid));
+            //write isvalid to client
 
-    //         if(isValid==1){
-    //             //write student Menu
-    //             while(1){
-    //             char* studentMenu="Welcome to Student Menu\n"
-    //                                 "1.Enroll to new course\n"
-    //                                 "2.Unenroll from offered course\n"
-    //                                 "3.View enrollments in course\n"
-    //                                 "4.Password Change\n"
-    //                                 "5.Exit\n";
-    //             write(newsockfd,studentMenu,strlen(studentMenu));
-    //             //write student Menu
+            if(isValid==1){
+                //write student Menu
+                while(1){
+                char* studentMenu="Welcome to Student Menu\n"
+                                    "1.Enroll to new course\n"
+                                    "2.Unenroll from offered course\n"
+                                    "3.View enrollments in course\n"
+                                    "4.Password Change\n"
+                                    "5.Exit\n";
+                write(newsockfd,studentMenu,strlen(studentMenu));
+                //write student Menu
 
 
     //             //read student choice
