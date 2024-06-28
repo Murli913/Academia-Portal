@@ -959,86 +959,86 @@ int main(int argc, char* argv[]){
                     write(newsockfd,msg,strlen(msg));
                     //write course maxStudentsAllowed
 
-    //                 //read course maxStudentsAllowed
-    //                 read(newsockfd,&addCourse.maxStudentsAllowed,sizeof(addCourse.maxStudentsAllowed));
-    //                 //read course maxStudentsAllowed
+                    //read course maxStudentsAllowed
+                    read(newsockfd,&addCourse.maxStudentsAllowed,sizeof(addCourse.maxStudentsAllowed));
+                    //read course maxStudentsAllowed
 
-    //                 //is course active
-    //                 addCourse.status=1;
-    //                 //is course active
-    //                 int checker=searchActiveCourse(addCourse.course_code);
+                    //is course active
+                    addCourse.status=1;
+                    //is course active
+                    int checker=searchActiveCourse(addCourse.course_code);
 
 
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(int));
-    //                 //write checker
+                    //write checker
+                    write(newsockfd,&checker,sizeof(int));
+                    //write checker
 
-    //                 if(checker==-1){
-    //                     break;
-    //                 }
-    //                 else if(checker==0){
-    //                     //duplicate entry
-    //                     break;
-    //                 }
-    //                 else if(checker==1){
-    //                     //course not present
+                    if(checker==-1){
+                        break;
+                    }
+                    else if(checker==0){
+                        //duplicate entry
+                        break;
+                    }
+                    else if(checker==1){
+                        //course not present
 
-    //                     //write course entry
-    //                     int addCourseEntry=AddCourse(addCourse);
-    //                     write(newsockfd,&addCourseEntry,sizeof(addCourseEntry));
-    //                     //write course entry
+                        //write course entry
+                        int addCourseEntry=AddCourse(addCourse);
+                        write(newsockfd,&addCourseEntry,sizeof(addCourseEntry));
+                        //write course entry
 
-    //                     if(addCourseEntry==-1){
-    //                         break;
-    //                     }else{
-    //                         //write course added successfully!!!
-    //                         msg="Course added successfully!!!\n";
-    //                         write(newsockfd,msg,strlen(msg));
+                        if(addCourseEntry==-1){
+                            break;
+                        }else{
+                            //write course added successfully!!!
+                            msg="Course added successfully!!!\n";
+                            write(newsockfd,msg,strlen(msg));
                             
-    //                         //write course added successfully!!!
-    //                     }
-    //                 }
-    //                 else{break;}
+                            //write course added successfully!!!
+                        }
+                    }
+                    else{break;}
 
 
-    //             }
-    //             else if(facultyChoice==2){
-    //                 //remove course
-    //                 //ask for course_code
-    //                 char removeThisCourse[100];
+                }
+                else if(facultyChoice==2){
+                    //remove course
+                    //ask for course_code
+                    char removeThisCourse[100];
 
-    //                 //write course code
-    //                 char* msg="Enter course code\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write course code
+                    //write course code
+                    char* msg="Enter course code\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write course code
 
-    //                 //read course code
-    //                 read(newsockfd,&removeThisCourse,sizeof(removeThisCourse));
-    //                 //read course code
+                    //read course code
+                    read(newsockfd,&removeThisCourse,sizeof(removeThisCourse));
+                    //read course code
 
-    //                 int checker=searchActiveCourse(removeThisCourse);
+                    int checker=searchActiveCourse(removeThisCourse);
 
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(int));
-    //                 //write checker
+                    //write checker
+                    write(newsockfd,&checker,sizeof(int));
+                    //write checker
 
-    //                 if(checker==-1){
-    //                     //unable to access
-    //                     break;
-    //                 }else if(checker==0){
-    //                     removeCourse(removeThisCourse);
+                    if(checker==-1){
+                        //unable to access
+                        break;
+                    }else if(checker==0){
+                        removeCourse(removeThisCourse);
 
-    //                     msg="Course has been removed\n";
+                        msg="Course has been removed\n";
 
-    //                     //write course remove msg
-    //                     write(newsockfd,msg,strlen(msg));
-    //                     //write course remove msg
+                        //write course remove msg
+                        write(newsockfd,msg,strlen(msg));
+                        //write course remove msg
                         
-    //                 }else if(checker==1){
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
+                    }else if(checker==1){
+                        break;
+                    }else{
+                        break;
+                    }
 
     //             }
     //             else if(facultyChoice==3){
