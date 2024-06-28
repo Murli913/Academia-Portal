@@ -415,108 +415,108 @@ int main(int argc, char* argv[]){
                             }
                             
 
-    //                     }else if(namePass==2){
-    //                         //update password
-    //                         struct Student updatePassword;
-    //                         int fd=open("Student.txt",O_RDONLY,0666);
-    //                         while(read(fd,&updatePassword,sizeof(updatePassword))>0){
-    //                             if(strcmp(updatePassword.rollno,inputrollno)==0){
-    //                                 //write msg to enter new password
-    //                                 msg="Enter new password\n";
-    //                                 write(newsockfd,msg,strlen(msg));
-    //                                 //write msg to enter new password
+                        }else if(namePass==2){
+                            //update password
+                            struct Student updatePassword;
+                            int fd=open("Student.txt",O_RDONLY,0666);
+                            while(read(fd,&updatePassword,sizeof(updatePassword))>0){
+                                if(strcmp(updatePassword.rollno,inputrollno)==0){
+                                    //write msg to enter new password
+                                    msg="Enter new password\n";
+                                    write(newsockfd,msg,strlen(msg));
+                                    //write msg to enter new password
 
-    //                                 //read new password
-    //                                 read(newsockfd,updatePassword.password,sizeof(updatePassword.password));
-    //                                 //read new password
-    //                                 lseek(fd,-1*sizeof(updatePassword),SEEK_CUR);
-    //                                 write(fd,&updatePassword,sizeof(updatePassword));
+                                    //read new password
+                                    read(newsockfd,updatePassword.password,sizeof(updatePassword.password));
+                                    //read new password
+                                    lseek(fd,-1*sizeof(updatePassword),SEEK_CUR);
+                                    write(fd,&updatePassword,sizeof(updatePassword));
 
-    //                                 //write msg updation successful
-    //                                 msg="Name has been updated\n";
-    //                                 write(newsockfd,msg,strlen(msg));
-    //                                 //write msg updation successful
-    //                                 break;
-    //                             }
-    //                         }
-    //                     }else{
-    //                         break;
-    //                     }
+                                    //write msg updation successful
+                                    msg="Name has been updated\n";
+                                    write(newsockfd,msg,strlen(msg));
+                                    //write msg updation successful
+                                    break;
+                                }
+                            }
+                        }else{
+                            break;
+                        }
 
-    //                 }else if(checker==1){
-    //                     //unique entry
-    //                     msg="No such student exist\n";
+                    }else if(checker==1){
+                        //unique entry
+                        msg="No such student exist\n";
 
-    //                     //write student not found
-    //                     write(newsockfd,msg,strlen(msg));
-    //                     //write student not found
+                        //write student not found
+                        write(newsockfd,msg,strlen(msg));
+                        //write student not found
                         
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
+                        break;
+                    }else{
+                        break;
+                    }
 
-    //             }
-    //             else if(adminChoice==6){
-    //                 //update faculty
-    //                 //write input rollnumber
-    //                 char* msg="Input facUID of faculty to update\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write input rollnumber
-    //                 char inputUID[100];
-    //                 //read Student UID
-    //                 read(newsockfd,inputUID,sizeof(inputUID));
-    //                 //read Student UID
+                }
+                else if(adminChoice==6){
+                    //update faculty
+                    //write input rollnumber
+                    char* msg="Input facUID of faculty to update\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write input rollnumber
+                    char inputUID[100];
+                    //read Student UID
+                    read(newsockfd,inputUID,sizeof(inputUID));
+                    //read Student UID
 
-    //                 int checker=searchFaculty(inputUID);
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(int));
-    //                 //write checker
+                    int checker=searchFaculty(inputUID);
+                    //write checker
+                    write(newsockfd,&checker,sizeof(int));
+                    //write checker
 
-    //                 if(checker==-1){
-    //                     //unable to access database
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //duplicate entry
-    //                     int updateNamePass;
+                    if(checker==-1){
+                        //unable to access database
+                        break;
+                    }else if(checker==0){
+                        //duplicate entry
+                        int updateNamePass;
 
-    //                     //write nam/pass
-    //                     msg="Do you want to update Name or Password\n"
-    //                         "1. Name\n"
-    //                         "2. Password\n";
-    //                     write(newsockfd,msg,strlen(msg));
-    //                     //write nam/pass
+                        //write nam/pass
+                        msg="Do you want to update Name or Password\n"
+                            "1. Name\n"
+                            "2. Password\n";
+                        write(newsockfd,msg,strlen(msg));
+                        //write nam/pass
 
-    //                     //read namepass value
-    //                     int namePass;
-    //                     read(newsockfd,&namePass,sizeof(int));
-    //                     //read namepass value
+                        //read namepass value
+                        int namePass;
+                        read(newsockfd,&namePass,sizeof(int));
+                        //read namepass value
 
-    //                     if(namePass==1){
-    //                         //update Name
-    //                         struct Faculty updateName;
-    //                         int fd=open("Faculty.txt",O_RDWR,0666);
-    //                         while(read(fd,&updateName,sizeof(updateName))>0){
-    //                             if(strcmp(updateName.facultyUID,inputUID)==0){
-    //                                 //write msg to enter new name
-    //                                 msg="Enter new name\n";
-    //                                 write(newsockfd,msg,strlen(msg));
-    //                                 //write msg to enter new name
+                        if(namePass==1){
+                            //update Name
+                            struct Faculty updateName;
+                            int fd=open("Faculty.txt",O_RDWR,0666);
+                            while(read(fd,&updateName,sizeof(updateName))>0){
+                                if(strcmp(updateName.facultyUID,inputUID)==0){
+                                    //write msg to enter new name
+                                    msg="Enter new name\n";
+                                    write(newsockfd,msg,strlen(msg));
+                                    //write msg to enter new name
 
-    //                                 //read new name
-    //                                 read(newsockfd,updateName.name,sizeof(updateName.name));
-    //                                 //read new name
+                                    //read new name
+                                    read(newsockfd,updateName.name,sizeof(updateName.name));
+                                    //read new name
 
-    //                                 lseek(fd,-1*sizeof(updateName),SEEK_CUR);
-    //                                 write(fd,&updateName,sizeof(updateName));
+                                    lseek(fd,-1*sizeof(updateName),SEEK_CUR);
+                                    write(fd,&updateName,sizeof(updateName));
 
-    //                                 //write msg updation successful
-    //                                 msg="Name has been updated\n";
-    //                                 write(newsockfd,msg,strlen(msg));
-    //                                 //write msg updation successful
-    //                                 break;
-    //                             }
-    //                         }
+                                    //write msg updation successful
+                                    msg="Name has been updated\n";
+                                    write(newsockfd,msg,strlen(msg));
+                                    //write msg updation successful
+                                    break;
+                                }
+                            }
                             
                             
 
