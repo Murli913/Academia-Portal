@@ -1040,47 +1040,47 @@ int main(int argc, char* argv[]){
                         break;
                     }
 
-    //             }
-    //             else if(facultyChoice==3){
-    //                 //view enrollments
+                }
+                else if(facultyChoice==3){
+                    //view enrollments
 
-    //                 //sendmsg for input 
-    //                 char* msg="Enter course code";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //sendmsg for input 
+                    //sendmsg for input 
+                    char* msg="Enter course code";
+                    write(newsockfd,msg,strlen(msg));
+                    //sendmsg for input 
 
-    //                 //read input coursecode
-    //                 char inputCourseCode[100];
-    //                 read(newsockfd,&inputCourseCode,sizeof(inputCourseCode));
-    //                 //read input coursecode
+                    //read input coursecode
+                    char inputCourseCode[100];
+                    read(newsockfd,&inputCourseCode,sizeof(inputCourseCode));
+                    //read input coursecode
 
-    //                 int checker=searchActiveCourse(inputCourseCode);
+                    int checker=searchActiveCourse(inputCourseCode);
                     
-    //                 //send checker to client
-    //                 write(newsockfd,&checker,sizeof(int));
-    //                 //send checker to client
+                    //send checker to client
+                    write(newsockfd,&checker,sizeof(int));
+                    //send checker to client
 
-    //                 if(checker==-1){
-    //                     //unable to access
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //display 
-    //                     //send message
-    //                     msg="Number of current students are:\n";
-    //                     write(newsockfd,&msg,sizeof(msg));
-    //                     //send message
+                    if(checker==-1){
+                        //unable to access
+                        break;
+                    }else if(checker==0){
+                        //display 
+                        //send message
+                        msg="Number of current students are:\n";
+                        write(newsockfd,&msg,sizeof(msg));
+                        //send message
 
-    //                     //write value
-    //                     int activeStudents=getStudentCount(inputCourseCode);
-    //                     write(newsockfd,&activeStudents,sizeof(activeStudents));
-    //                     //write value
+                        //write value
+                        int activeStudents=getStudentCount(inputCourseCode);
+                        write(newsockfd,&activeStudents,sizeof(activeStudents));
+                        //write value
                         
-    //                 }else if(checker==1){
-    //                     //course does not exist
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
+                    }else if(checker==1){
+                        //course does not exist
+                        break;
+                    }else{
+                        break;
+                    }
 
     //             }
     //             else if(facultyChoice==4){
