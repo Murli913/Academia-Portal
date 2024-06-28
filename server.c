@@ -124,78 +124,78 @@ int main(int argc, char* argv[]){
                 read(newsockfd,&adminChoice,sizeof(int));
                 //read adminMenu choice
                 
-    //             if(adminChoice==1){
-    //                 struct Student addStudent;
+                if(adminChoice==1){
+                    struct Student addStudent;
                     
-    //                 //write student name
-    //                 char* msg="Enter student name\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write student name
+                    //write student name
+                    char* msg="Enter student name\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write student name
 
-    //                 //read student name
-    //                 read(newsockfd,&addStudent.name,sizeof(addStudent.name));
-    //                 //read student name
+                    //read student name
+                    read(newsockfd,&addStudent.name,sizeof(addStudent.name));
+                    //read student name
                     
-    //                 //write student rollno
-    //                 msg="Enter student rollno\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write student rollno
+                    //write student rollno
+                    msg="Enter student rollno\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write student rollno
 
-    //                 //read student rollno
-    //                 read(newsockfd,&addStudent.rollno,sizeof(addStudent.rollno));
-    //                 //read student rollno
+                    //read student rollno
+                    read(newsockfd,&addStudent.rollno,sizeof(addStudent.rollno));
+                    //read student rollno
 
-    //                 //write student emailID
-    //                 msg="Enter student emailID\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write student emailID
+                    //write student emailID
+                    msg="Enter student emailID\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write student emailID
 
-    //                 //read student emailID
-    //                 read(newsockfd,&addStudent.emailId,sizeof(addStudent.emailId));
-    //                 //read student emailID
+                    //read student emailID
+                    read(newsockfd,&addStudent.emailId,sizeof(addStudent.emailId));
+                    //read student emailID
 
-    //                 //write student password
-    //                 msg="Enter student password\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write student password
+                    //write student password
+                    msg="Enter student password\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write student password
 
-    //                 //read student password
-    //                 read(newsockfd,&addStudent.password,sizeof(addStudent.password));
-    //                 //read student password
-    //                 int checker=searchStudent(addStudent.rollno);
+                    //read student password
+                    read(newsockfd,&addStudent.password,sizeof(addStudent.password));
+                    //read student password
+                    int checker=searchStudent(addStudent.rollno);
 
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(int));
-    //                 //write checker
-    //                 addStudent.status=1;
+                    //write checker
+                    write(newsockfd,&checker,sizeof(int));
+                    //write checker
+                    addStudent.status=1;
 
                     
-    //                 if(checker==-1){
-    //                     //unable to access database
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //duplicate entry
-    //                     break;
+                    if(checker==-1){
+                        //unable to access database
+                        break;
+                    }else if(checker==0){
+                        //duplicate entry
+                        break;
 
-    //                 }else if(checker==1){
-    //                     //unique entry
-    //                     int addStudentEntry=AddStudent(addStudent);
-    //                     //write addStudentEntry
-    //                     write(newsockfd,&addStudentEntry,sizeof(int));
-    //                     //write addStudentEntry
-    //                     if(addStudentEntry==-1){
-    //                         break;
-    //                     }else{
-    //                         //write student added successfully!!!
-    //                         msg="Student added successfully!!!\n";
-    //                         write(newsockfd,msg,strlen(msg));
+                    }else if(checker==1){
+                        //unique entry
+                        int addStudentEntry=AddStudent(addStudent);
+                        //write addStudentEntry
+                        write(newsockfd,&addStudentEntry,sizeof(int));
+                        //write addStudentEntry
+                        if(addStudentEntry==-1){
+                            break;
+                        }else{
+                            //write student added successfully!!!
+                            msg="Student added successfully!!!\n";
+                            write(newsockfd,msg,strlen(msg));
                             
-    //                         //write student added successfully!!!
-    //                     }
+                            //write student added successfully!!!
+                        }
 
-    //                 }else{
-    //                     break;
-    //                 }
+                    }else{
+                        break;
+                    }
 
     //             }
     //             else if(adminChoice==2){
