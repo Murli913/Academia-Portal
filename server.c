@@ -917,47 +917,47 @@ int main(int argc, char* argv[]){
                 if(facultyChoice==1){
                     struct Course addCourse;
 
-    //                 //write course code
-    //                 char* msg="Enter course code\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write course code
+                    //write course code
+                    char* msg="Enter course code\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write course code
 
-    //                 //read course code
-    //                 read(newsockfd,&addCourse.course_code,sizeof(addCourse.course_code));
-    //                 //read course code
-
-
-    //                 //write course name
-    //                 msg="Enter course name\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write course codnamee
-
-    //                 //read course name
-    //                 read(newsockfd,&addCourse.course_name,sizeof(addCourse.course_name));
-    //                 //read course name
-
-    //                 //add facUID
-    //                 strcpy(addCourse.facultyUID,inputFacUID);
-    //                 //add facUID
-
-    //                 //write course credits
-    //                 msg="Enter course credits\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write course credits
-
-    //                 //read course credits
-    //                 read(newsockfd,&addCourse.credits,sizeof(addCourse.credits));
-    //                 //read course credits
-
-    //                 //current students enrolled
-    //                 addCourse.currentStudentsEnrolled=0;
-    //                 //current students enrolled
+                    //read course code
+                    read(newsockfd,&addCourse.course_code,sizeof(addCourse.course_code));
+                    //read course code
 
 
-    //                 //write course maxStudentsAllowed
-    //                 msg="Enter maximum Students allowed\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write course maxStudentsAllowed
+                    //write course name
+                    msg="Enter course name\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write course codnamee
+
+                    //read course name
+                    read(newsockfd,&addCourse.course_name,sizeof(addCourse.course_name));
+                    //read course name
+
+                    //add facUID
+                    strcpy(addCourse.facultyUID,inputFacUID);
+                    //add facUID
+
+                    //write course credits
+                    msg="Enter course credits\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write course credits
+
+                    //read course credits
+                    read(newsockfd,&addCourse.credits,sizeof(addCourse.credits));
+                    //read course credits
+
+                    //current students enrolled
+                    addCourse.currentStudentsEnrolled=0;
+                    //current students enrolled
+
+
+                    //write course maxStudentsAllowed
+                    msg="Enter maximum Students allowed\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write course maxStudentsAllowed
 
     //                 //read course maxStudentsAllowed
     //                 read(newsockfd,&addCourse.maxStudentsAllowed,sizeof(addCourse.maxStudentsAllowed));
