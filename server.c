@@ -829,93 +829,93 @@ int main(int argc, char* argv[]){
                     //write view course details
 
                     
-    //             }else if(studentChoice==4){
-    //                 struct Student updateThisPassword;
-    //                 int fd=open("Student.txt",O_RDWR,0666);
-    //                 while(read(fd,&updateThisPassword,sizeof(updateThisPassword))>0){
-    //                     if(strcmp(updateThisPassword.rollno,inputStudentUID)==0){
-    //                         //write msg to enter new password
-    //                         char* msg="Enter new password\n";
-    //                         write(newsockfd,msg,strlen(msg));
-    //                         //write msg to enter new password
+                }else if(studentChoice==4){
+                    struct Student updateThisPassword;
+                    int fd=open("Student.txt",O_RDWR,0666);
+                    while(read(fd,&updateThisPassword,sizeof(updateThisPassword))>0){
+                        if(strcmp(updateThisPassword.rollno,inputStudentUID)==0){
+                            //write msg to enter new password
+                            char* msg="Enter new password\n";
+                            write(newsockfd,msg,strlen(msg));
+                            //write msg to enter new password
 
 
-    //                         //read new password
-    //                         read(newsockfd,updateThisPassword.password,sizeof(updateThisPassword.name));
-    //                         //read new password
-    //                         lseek(fd,-1*sizeof(updateThisPassword),SEEK_CUR);
-    //                         write(fd,&updateThisPassword,sizeof(updateThisPassword));
+                            //read new password
+                            read(newsockfd,updateThisPassword.password,sizeof(updateThisPassword.name));
+                            //read new password
+                            lseek(fd,-1*sizeof(updateThisPassword),SEEK_CUR);
+                            write(fd,&updateThisPassword,sizeof(updateThisPassword));
 
 
-    //                         //write msg updation successful
-    //                         msg="Password has been updated\n";
-    //                         write(newsockfd,msg,strlen(msg));
-    //                         //write msg updation successful
-    //                         break;
-    //                     }
+                            //write msg updation successful
+                            msg="Password has been updated\n";
+                            write(newsockfd,msg,strlen(msg));
+                            //write msg updation successful
+                            break;
+                        }
                         
-    //                 }
-    //             }else if(studentChoice==5){
-    //                 printf("Student Exiting...\n");
-    //                 break;
-    //             }else{
-    //                 printf("Student wrong choice\n");
-    //                 break;
-    //             }
-    //             }
-    //         }else{
-    //             break;
-    //         }
-    //     }else if(choice==3){
-    //         //faculty login
-    //         //write input email msg
-    //         char* facUIDMsg="Enter faculty UID:\n";
-    //         write(newsockfd,facUIDMsg,strlen(facUIDMsg));
-    //         //write input email msg
+                    }
+                }else if(studentChoice==5){
+                    printf("Student Exiting...\n");
+                    break;
+                }else{
+                    printf("Student wrong choice\n");
+                    break;
+                }
+                }
+            }else{
+                break;
+            }
+        }else if(choice==3){
+            //faculty login
+            //write input email msg
+            char* facUIDMsg="Enter faculty UID:\n";
+            write(newsockfd,facUIDMsg,strlen(facUIDMsg));
+            //write input email msg
 
-    //         //read input email
-    //         char inputFacUID[100];
-    //         read(newsockfd,&inputFacUID,sizeof(inputFacUID));
-    //         //read input email
+            //read input email
+            char inputFacUID[100];
+            read(newsockfd,&inputFacUID,sizeof(inputFacUID));
+            //read input email
 
-    //         //write input Password msg
-    //         char* PasswordMsg="Enter Password:\n";
-    //         write(newsockfd,PasswordMsg,strlen(PasswordMsg));
-    //         //write input Password msg
+            //write input Password msg
+            char* PasswordMsg="Enter Password:\n";
+            write(newsockfd,PasswordMsg,strlen(PasswordMsg));
+            //write input Password msg
 
-    //         //read input password
-    //         char inputPassword[100];
-    //         read(newsockfd,&inputPassword,sizeof(inputPassword));
-    //         //read input password
+            //read input password
+            char inputPassword[100];
+            read(newsockfd,&inputPassword,sizeof(inputPassword));
+            //read input password
 
 
 
-    //         int isValid=AuthenticateFaculty(inputFacUID,inputPassword);
+            int isValid=AuthenticateFaculty(inputFacUID,inputPassword);
 
-    //         //write isvalid to client
-    //         write(newsockfd,&isValid,sizeof(isValid));
-    //         //write isvalid to client
-    //         if(isValid==1){
-    //             //Authentication Successful
-    //             while(1){
-    //             //write Faculty Menu
-    //             char* facultyMenu="Welcome to Faculty Menu\n"
-    //                                 "1.Add new course\n"
-    //                                 "2.Remove offered course\n"
-    //                                 "3.View enrollments in course\n"
-    //                                 "4.Password Change\n"
-    //                                 "5.Exit\n";
-    //             write(newsockfd,facultyMenu,strlen(facultyMenu));
-    //             //write Faculty Menu
+            //write isvalid to client
+            write(newsockfd,&isValid,sizeof(isValid));
+            //write isvalid to client
+            if(isValid==1){
+                //Authentication Successful
+                while(1){
+                //write Faculty Menu
+                char* facultyMenu="Welcome to Faculty Menu\n"
+                                    "1.Add new course\n"
+                                    "2.Remove offered course\n"
+                                    "3.View enrollments in course\n"
+                                    "4.Password Change\n"
+                                    "5.Exit\n";
+                write(newsockfd,facultyMenu,strlen(facultyMenu));
+                //write Faculty Menu
 
-    //             //read Faculty choice
-    //             int facultyChoice;
-    //             read(newsockfd,&facultyChoice,sizeof(int));
-    //             //read Faculty choice
+                //read Faculty choice
+                int facultyChoice;
+                read(newsockfd,&facultyChoice,sizeof(int));
+                //read Faculty choice
 
                 
-    //             if(facultyChoice==1){
-    //                 struct Course addCourse;
+                if(facultyChoice==1){
+                    struct Course addCourse;
 
     //                 //write course code
     //                 char* msg="Enter course code\n";
