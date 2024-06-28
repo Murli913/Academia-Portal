@@ -46,83 +46,83 @@ int main(int argc, char* argv[]){
         return -1;
     }*/
     //communication between a client and server starts
-    // while(1){
-    //     //changes done here for concurrency
-    //     newsockfd=accept(sockfd,(struct sockaddr*)&cli_addr,&clilen);
-    //     if(newsockfd<0){
-    //         printf("error on accept\n");
-    //         return -1;
-    //     }
-    //     printf("Connection accepted from IP: %s  Port: %d\n",inet_ntoa(cli_addr.sin_addr),ntohs(cli_addr.sin_port));
-    //     if(!fork()){
-    //         close(sockfd);
-    //         while(1){
-    //             //write main menu
+    while(1){
+        //changes done here for concurrency
+        newsockfd=accept(sockfd,(struct sockaddr*)&cli_addr,&clilen);
+        if(newsockfd<0){
+            printf("error on accept\n");
+            return -1;
+        }
+        printf("Connection accepted from IP: %s  Port: %d\n",inet_ntoa(cli_addr.sin_addr),ntohs(cli_addr.sin_port));
+        if(!fork()){
+            close(sockfd);
+            while(1){
+                //write main menu
         
-    //     char* mainMenu="Welcome to Academia\n"
-    //                     "Enter your Choice\n"
-    //                     "1. Admin\n"
-    //                     "2. Student\n"
-    //                     "3. Faculty\n";
+        char* mainMenu="Welcome to Academia\n"
+                        "Enter your Choice\n"
+                        "1. Admin\n"
+                        "2. Student\n"
+                        "3. Faculty\n";
         
-    //     write(newsockfd,mainMenu,strlen(mainMenu));
-    //     //write main menu
+        write(newsockfd,mainMenu,strlen(mainMenu));
+        //write main menu
 
 
 
-    //     //read choice
-    //     int choice;
-    //     read(newsockfd,&choice,sizeof(int));
-    //     //read choice
+        //read choice
+        int choice;
+        read(newsockfd,&choice,sizeof(int));
+        //read choice
         
-    //     if(choice==1){
-    //         //authentication input
+        if(choice==1){
+            //authentication input
 
-    //         //write input email msg
-    //         char* EmailMsg="Enter Email:\n";
-    //         write(newsockfd,EmailMsg,strlen(EmailMsg));
-    //         //write input email msg
+            //write input email msg
+            char* EmailMsg="Enter Email:\n";
+            write(newsockfd,EmailMsg,strlen(EmailMsg));
+            //write input email msg
 
-    //         //read input email
-    //         char inputEmail[100];
-    //         read(newsockfd,&inputEmail,sizeof(inputEmail));
-    //         //read input email
+            //read input email
+            char inputEmail[100];
+            read(newsockfd,&inputEmail,sizeof(inputEmail));
+            //read input email
 
-    //         //write input Password msg
-    //         char* PasswordMsg="Enter Password:\n";
-    //         write(newsockfd,PasswordMsg,strlen(PasswordMsg));
-    //         //write input Password msg
+            //write input Password msg
+            char* PasswordMsg="Enter Password:\n";
+            write(newsockfd,PasswordMsg,strlen(PasswordMsg));
+            //write input Password msg
 
-    //         //read input password
-    //         char inputPassword[100];
-    //         read(newsockfd,&inputPassword,sizeof(inputPassword));
-    //         //read input password
-    //         int isValid=AuthenticateAdmin(inputEmail,inputPassword);
+            //read input password
+            char inputPassword[100];
+            read(newsockfd,&inputPassword,sizeof(inputPassword));
+            //read input password
+            int isValid=AuthenticateAdmin(inputEmail,inputPassword);
 
-    //         //write isvalid to client
-    //         write(newsockfd,&isValid,sizeof(isValid));
-    //         //write isvalid to client
-    //         if(isValid==1){
-    //             //Authentication Successful
-    //             //write adminMenu msg
-    //             while(1){
-    //             char* adminMenu="Welcome to Admin Menu\n"
-    //                             "1.Add Student\n"
-    //                             "2.Add Faculty\n"
-    //                             "3.Activate Student\n"
-    //                             "4.Deactivate Student\n"
-    //                             "5.Update Student Details\n"
-    //                             "6.Update Faculty Details\n"
-    //                             "7.View Student Details\n"
-    //                             "8.View Faculty Details\n"
-    //                             "9.Exit\n";
-    //             write(newsockfd,adminMenu,strlen(adminMenu));
-    //             //write adminMenu msg
+            //write isvalid to client
+            write(newsockfd,&isValid,sizeof(isValid));
+            //write isvalid to client
+            if(isValid==1){
+                //Authentication Successful
+                //write adminMenu msg
+                while(1){
+                char* adminMenu="Welcome to Admin Menu\n"
+                                "1.Add Student\n"
+                                "2.Add Faculty\n"
+                                "3.Activate Student\n"
+                                "4.Deactivate Student\n"
+                                "5.Update Student Details\n"
+                                "6.Update Faculty Details\n"
+                                "7.View Student Details\n"
+                                "8.View Faculty Details\n"
+                                "9.Exit\n";
+                write(newsockfd,adminMenu,strlen(adminMenu));
+                //write adminMenu msg
                 
-    //             //read adminMenu choice
-    //             int adminChoice;
-    //             read(newsockfd,&adminChoice,sizeof(int));
-    //             //read adminMenu choice
+                //read adminMenu choice
+                int adminChoice;
+                read(newsockfd,&adminChoice,sizeof(int));
+                //read adminMenu choice
                 
     //             if(adminChoice==1){
     //                 struct Student addStudent;
