@@ -307,112 +307,112 @@ int main(int argc, char* argv[]){
                         break;
                     }
                 }
-    //             else if(adminChoice==4){
-    //                 struct Student deactivateThisStudent;
-    //                 //write Student UID
-    //                 char* msg="Enter Student rollno\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write Student UID
+                else if(adminChoice==4){
+                    struct Student deactivateThisStudent;
+                    //write Student UID
+                    char* msg="Enter Student rollno\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write Student UID
 
-    //                 //read Student UID
-    //                 read(newsockfd,&deactivateThisStudent.rollno,sizeof(deactivateThisStudent.rollno));
-    //                 //read Student UID
+                    //read Student UID
+                    read(newsockfd,&deactivateThisStudent.rollno,sizeof(deactivateThisStudent.rollno));
+                    //read Student UID
 
-    //                 int checker=searchStudent(deactivateThisStudent.rollno);
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(int));
-    //                 //write checker
+                    int checker=searchStudent(deactivateThisStudent.rollno);
+                    //write checker
+                    write(newsockfd,&checker,sizeof(int));
+                    //write checker
 
-    //                 if(checker==-1){
-    //                     //unable to access database
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //duplicate entry
-    //                     deactivateThisStudent.status=0;
-    //                     //update status in database
-    //                     updateStatusStudent(deactivateThisStudent);
-    //                     //update status in database
+                    if(checker==-1){
+                        //unable to access database
+                        break;
+                    }else if(checker==0){
+                        //duplicate entry
+                        deactivateThisStudent.status=0;
+                        //update status in database
+                        updateStatusStudent(deactivateThisStudent);
+                        //update status in database
                         
-    //                     msg="Student status deactivated\n";
+                        msg="Student status deactivated\n";
 
-    //                     //write student msg
-    //                     write(newsockfd,msg,strlen(msg));
-    //                     //write student msg
+                        //write student msg
+                        write(newsockfd,msg,strlen(msg));
+                        //write student msg
 
-    //                 }else if(checker==1){
-    //                     //unique entry
-    //                     msg="No such student exist\n";
+                    }else if(checker==1){
+                        //unique entry
+                        msg="No such student exist\n";
 
-    //                     //write student not found
-    //                     write(newsockfd,msg,strlen(msg));
-    //                     //write student not found
+                        //write student not found
+                        write(newsockfd,msg,strlen(msg));
+                        //write student not found
                         
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
-    //             }
-    //             else if(adminChoice==5){
-    //                 //update student
+                        break;
+                    }else{
+                        break;
+                    }
+                }
+                else if(adminChoice==5){
+                    //update student
 
-    //                 //write input rollnumber
-    //                 char* msg="Input Rollnumber of student to update\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write input rollnumber
-    //                 char inputrollno[100];
-    //                 //read Student UID
-    //                 read(newsockfd,inputrollno,sizeof(inputrollno));
-    //                 //read Student UID
+                    //write input rollnumber
+                    char* msg="Input Rollnumber of student to update\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write input rollnumber
+                    char inputrollno[100];
+                    //read Student UID
+                    read(newsockfd,inputrollno,sizeof(inputrollno));
+                    //read Student UID
 
-    //                 int checker=searchStudent(inputrollno);
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(int));
-    //                 //write checker
+                    int checker=searchStudent(inputrollno);
+                    //write checker
+                    write(newsockfd,&checker,sizeof(int));
+                    //write checker
 
-    //                 if(checker==-1){
-    //                     //unable to access database
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //duplicate entry
-    //                     int updateNamePass;
+                    if(checker==-1){
+                        //unable to access database
+                        break;
+                    }else if(checker==0){
+                        //duplicate entry
+                        int updateNamePass;
 
-    //                     //write nam/pass
-    //                     msg="Do you want to update Name or Password\n"
-    //                         "1. Name\n"
-    //                         "2. Password\n";
-    //                     write(newsockfd,msg,strlen(msg));
-    //                     //write nam/pass
+                        //write nam/pass
+                        msg="Do you want to update Name or Password\n"
+                            "1. Name\n"
+                            "2. Password\n";
+                        write(newsockfd,msg,strlen(msg));
+                        //write nam/pass
 
-    //                     //read namepass value
-    //                     int namePass;
-    //                     read(newsockfd,&namePass,sizeof(int));
-    //                     //read namepass value
+                        //read namepass value
+                        int namePass;
+                        read(newsockfd,&namePass,sizeof(int));
+                        //read namepass value
 
-    //                     if(namePass==1){
-    //                         //update Name
-    //                         struct Student updateName;
-    //                         int fd=open("Student.txt",O_RDWR,0666);
-    //                         while(read(fd,&updateName,sizeof(updateName))>0){
-    //                             if(strcmp(updateName.rollno,inputrollno)==0){
-    //                                 //write msg to enter new name
-    //                                 msg="Enter new name\n";
-    //                                 write(newsockfd,msg,strlen(msg));
-    //                                 //write msg to enter new name
+                        if(namePass==1){
+                            //update Name
+                            struct Student updateName;
+                            int fd=open("Student.txt",O_RDWR,0666);
+                            while(read(fd,&updateName,sizeof(updateName))>0){
+                                if(strcmp(updateName.rollno,inputrollno)==0){
+                                    //write msg to enter new name
+                                    msg="Enter new name\n";
+                                    write(newsockfd,msg,strlen(msg));
+                                    //write msg to enter new name
 
-    //                                 //read new name
-    //                                 read(newsockfd,updateName.name,sizeof(updateName.name));
-    //                                 //read new name
+                                    //read new name
+                                    read(newsockfd,updateName.name,sizeof(updateName.name));
+                                    //read new name
 
-    //                                 lseek(fd,-1*sizeof(updateName),SEEK_CUR);
-    //                                 write(fd,&updateName,sizeof(updateName));
+                                    lseek(fd,-1*sizeof(updateName),SEEK_CUR);
+                                    write(fd,&updateName,sizeof(updateName));
 
-    //                                 //write msg updation successful
-    //                                 msg="Name has been updated\n";
-    //                                 write(newsockfd,msg,strlen(msg));
-    //                                 //write msg updation successful
-    //                                 break;
-    //                             }
-    //                         }
+                                    //write msg updation successful
+                                    msg="Name has been updated\n";
+                                    write(newsockfd,msg,strlen(msg));
+                                    //write msg updation successful
+                                    break;
+                                }
+                            }
                             
 
     //                     }else if(namePass==2){
