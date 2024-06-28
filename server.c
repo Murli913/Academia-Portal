@@ -716,117 +716,117 @@ int main(int argc, char* argv[]){
                 //write student Menu
 
 
-    //             //read student choice
-    //             int studentChoice;
-    //             read(newsockfd,&studentChoice,sizeof(int));
-    //             //read student choice
+                //read student choice
+                int studentChoice;
+                read(newsockfd,&studentChoice,sizeof(int));
+                //read student choice
 
                 
-    //             if(studentChoice==1){
+                if(studentChoice==1){
 
-    //                 char enrollInCourse[100];
-    //                 //write course code
-    //                 char* msg="Enter course code to enroll\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write course code
-
-
-    //                 //read course code
-    //                 read(newsockfd,&enrollInCourse,sizeof(enrollInCourse));
-    //                 //read course code
+                    char enrollInCourse[100];
+                    //write course code
+                    char* msg="Enter course code to enroll\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write course code
 
 
-    //                 int checker=searchActiveCourse(enrollInCourse);
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(int));
-    //                 //write checker
+                    //read course code
+                    read(newsockfd,&enrollInCourse,sizeof(enrollInCourse));
+                    //read course code
 
 
-    //                 if(checker==-1){
-    //                     //unable to access course database
-    //                     break;
-    //                 }else if(checker==0){   
-    //                     //course exists
-    //                     int enrollStatus=enrollInActiveCourse(enrollInCourse,inputStudentUID);
-    //                     //write enrollStatus
-    //                     write(newsockfd,&enrollStatus,sizeof(int));
-    //                     //write enrollStatus
-    //                     if(enrollStatus==-1){
-    //                         break;
-    //                     }else if(enrollStatus==1){
-    //                         //student is enrolled in course successfully
+                    int checker=searchActiveCourse(enrollInCourse);
+                    //write checker
+                    write(newsockfd,&checker,sizeof(int));
+                    //write checker
+
+
+                    if(checker==-1){
+                        //unable to access course database
+                        break;
+                    }else if(checker==0){   
+                        //course exists
+                        int enrollStatus=enrollInActiveCourse(enrollInCourse,inputStudentUID);
+                        //write enrollStatus
+                        write(newsockfd,&enrollStatus,sizeof(int));
+                        //write enrollStatus
+                        if(enrollStatus==-1){
+                            break;
+                        }else if(enrollStatus==1){
+                            //student is enrolled in course successfully
 
                             
-    //                     }else if(enrollStatus==0){
-    //                         //one of condition fails
-    //                         break;
-    //                     }else{
-    //                         break;
-    //                     }
+                        }else if(enrollStatus==0){
+                            //one of condition fails
+                            break;
+                        }else{
+                            break;
+                        }
                         
-    //                 }else if(checker==1){
-    //                     //course does not exist
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
-    //             }else if(studentChoice==2){
-    //                 //unenroll student
-    //                 char unEnrollInCourse[100];
+                    }else if(checker==1){
+                        //course does not exist
+                        break;
+                    }else{
+                        break;
+                    }
+                }else if(studentChoice==2){
+                    //unenroll student
+                    char unEnrollInCourse[100];
 
-    //                 //write course code
-    //                 char* msg="Enter course code\n";
-    //                 write(newsockfd,msg,strlen(msg));
-    //                 //write course code
+                    //write course code
+                    char* msg="Enter course code\n";
+                    write(newsockfd,msg,strlen(msg));
+                    //write course code
 
-    //                 //read course code
-    //                 read(newsockfd,&unEnrollInCourse,sizeof(unEnrollInCourse));
-    //                 //read course code
+                    //read course code
+                    read(newsockfd,&unEnrollInCourse,sizeof(unEnrollInCourse));
+                    //read course code
 
 
-    //                 int checker=searchActiveCourse(unEnrollInCourse);
-    //                 //write checker
-    //                 write(newsockfd,&checker,sizeof(int));
-    //                 //write checker
+                    int checker=searchActiveCourse(unEnrollInCourse);
+                    //write checker
+                    write(newsockfd,&checker,sizeof(int));
+                    //write checker
 
-    //                 if(checker==-1){
-    //                     //unable to access database
-    //                     break;
-    //                 }else if(checker==0){
-    //                     //course exists
-    //                     int unenrollStatus=unenrollInActiveCourse(unEnrollInCourse,inputStudentUID);
-    //                     //write unenrollStatus
-    //                     write(newsockfd,&unenrollStatus,sizeof(int));
-    //                     //write unenrollStatus
-    //                     if(unenrollStatus==-1){
-    //                         //error
-    //                         break;
-    //                     }else if(unenrollStatus==1){
-    //                         //success
+                    if(checker==-1){
+                        //unable to access database
+                        break;
+                    }else if(checker==0){
+                        //course exists
+                        int unenrollStatus=unenrollInActiveCourse(unEnrollInCourse,inputStudentUID);
+                        //write unenrollStatus
+                        write(newsockfd,&unenrollStatus,sizeof(int));
+                        //write unenrollStatus
+                        if(unenrollStatus==-1){
+                            //error
+                            break;
+                        }else if(unenrollStatus==1){
+                            //success
                             
-    //                     }else if(unenrollStatus==0){
-    //                         //failed
-    //                         break;
-    //                     }else{
-    //                         break;
-    //                     }
+                        }else if(unenrollStatus==0){
+                            //failed
+                            break;
+                        }else{
+                            break;
+                        }
                         
-    //                 }else if(checker==1){
-    //                     //course does not exist
-    //                     break;
-    //                 }else{
-    //                     break;
-    //                 }
-    //             }else if(studentChoice==3){
-    //                 //view enrolled courses
-    //                 //stores data from students in courses
-    //                 char viewCourseDetails[buffsz];
+                    }else if(checker==1){
+                        //course does not exist
+                        break;
+                    }else{
+                        break;
+                    }
+                }else if(studentChoice==3){
+                    //view enrolled courses
+                    //stores data from students in courses
+                    char viewCourseDetails[buffsz];
 
-    //                 viewEnrolledCourses(inputStudentUID,viewCourseDetails);
+                    viewEnrolledCourses(inputStudentUID,viewCourseDetails);
                     
-    //                 //write view course details
-    //                 write(newsockfd,&viewCourseDetails,buffsz);
-    //                 //write view course details
+                    //write view course details
+                    write(newsockfd,&viewCourseDetails,buffsz);
+                    //write view course details
 
                     
     //             }else if(studentChoice==4){
