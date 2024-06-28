@@ -1082,55 +1082,55 @@ int main(int argc, char* argv[]){
                         break;
                     }
 
-    //             }
-    //             else if(facultyChoice==4){
-    //                 //password change
-    //                 struct Faculty updateThisPassword;
-    //                 int fd=open("Faculty.txt",O_RDWR,0666);
-    //                 while(read(fd,&updateThisPassword,sizeof(updateThisPassword))>0){
-    //                     if(strcmp(updateThisPassword.facultyUID,inputFacUID)==0){
-    //                         //write msg to enter new password
-    //                         char* msg="Enter new password\n";
-    //                         write(newsockfd,msg,strlen(msg));
-    //                         //write msg to enter new password
+                }
+                else if(facultyChoice==4){
+                    //password change
+                    struct Faculty updateThisPassword;
+                    int fd=open("Faculty.txt",O_RDWR,0666);
+                    while(read(fd,&updateThisPassword,sizeof(updateThisPassword))>0){
+                        if(strcmp(updateThisPassword.facultyUID,inputFacUID)==0){
+                            //write msg to enter new password
+                            char* msg="Enter new password\n";
+                            write(newsockfd,msg,strlen(msg));
+                            //write msg to enter new password
 
 
-    //                         //read new password
-    //                         read(newsockfd,updateThisPassword.password,sizeof(updateThisPassword.name));
-    //                         //read new password
-    //                         lseek(fd,-1*sizeof(updateThisPassword),SEEK_CUR);
-    //                         write(fd,&updateThisPassword,sizeof(updateThisPassword));
+                            //read new password
+                            read(newsockfd,updateThisPassword.password,sizeof(updateThisPassword.name));
+                            //read new password
+                            lseek(fd,-1*sizeof(updateThisPassword),SEEK_CUR);
+                            write(fd,&updateThisPassword,sizeof(updateThisPassword));
 
 
-    //                         //write msg updation successful
-    //                         msg="Password has been updated\n";
-    //                         write(newsockfd,msg,strlen(msg));
-    //                         //write msg updation successful
-    //                         break;
-    //                     }
-    //                 }
-    //             }
-    //             else if(facultyChoice==5){
-    //                 printf("Faculty  Exiting...\n");
-    //                 break;
-    //             }else{
-    //                 printf("Faculty wrong choice\n");
-    //                 break;
-    //             }
-    //             }
-    //         }else{
-    //             break;
-    //         }
-    //     }else{
-    //         printf("wrong choice\n");
-    //         break;
-    //     } 
-    //         }
-    //     }
-    //     //changes done here for concurrency
+                            //write msg updation successful
+                            msg="Password has been updated\n";
+                            write(newsockfd,msg,strlen(msg));
+                            //write msg updation successful
+                            break;
+                        }
+                    }
+                }
+                else if(facultyChoice==5){
+                    printf("Faculty  Exiting...\n");
+                    break;
+                }else{
+                    printf("Faculty wrong choice\n");
+                    break;
+                }
+                }
+            }else{
+                break;
+            }
+        }else{
+            printf("wrong choice\n");
+            break;
+        } 
+            }
+        }
+        //changes done here for concurrency
              
-    // }
-    // close(newsockfd);
-    //close(sockfd);
+    }
+    close(newsockfd);
+    close(sockfd);
     return 0;
 }
