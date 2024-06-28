@@ -84,8 +84,8 @@ int main(int argc, char* argv[]){
             char inputPassword[100];
             scanf("%s",inputPassword);
             write(sockfd,&inputPassword,sizeof(inputPassword));
-            write inputPassword 
-            authentication input
+            //write inputPassword 
+            //authentication input
             
             //authenticate Check
             int isValid;
