@@ -55,3 +55,9 @@ academic details.
 ● Use System calls instead of Library functions wherever it is possible in the
 project: Process Management, File Management, File Locking, Semaphores,
 Multithreading and Inter Process Communication Mechanisms
+
+Results:
+Landing Page:
+<img width="468" alt="image" src="https://github.com/Murli913/Academia-Portal/assets/141387276/82dbfc9b-bdd4-4ce9-873d-2cc876b3bac2">
+
+
